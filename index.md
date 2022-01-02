@@ -25,17 +25,17 @@ Sung Min Park, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Madry\
 **Sparse PCA from Sparse Linear Regression**\
 Guy Bresler, Sung Min Park, Madalina Persu (*alphabetical order*)\
 NeurIPS 2018\
-[(paper)](https://arxiv.org/abs/1811.10106)
+[(arxiv)](https://arxiv.org/abs/1811.10106) [(poster)](/assets/files/neurips_2018_poster.pdf)
 
 **On the Equivalence of Sparse Statistical Problems**\
 Sung Min Park\
 S.M. thesis 2016\
-[(link)](/assets/files/sm_thesis.pdf)
+[(pdf)](/assets/files/sm_thesis.pdf)
 
 **Structured learning of sum-of-submodular higher order energy functions**\
 Alexander Fix, Thorsten Joachims, Sung Min Park, Ramin Zabih\
 ICCV 2013\
-[(paper)](/assets/files/submodular.pdf)
+[(pdf)](/assets/files/submodular.pdf)
 
 <p>&nbsp;</p>
 ## Personal
