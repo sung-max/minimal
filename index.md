@@ -2,122 +2,48 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+I am a PhD student at MIT EECS, advised by [Prof. Aleksander Madry](http://madry-lab.ml/).
 
-[Link to another page](./another-page.html).
+I work on machine learning, focusing on problems related to robustness.
+<p>&nbsp;</p>
 
-There should be whitespace between paragraphs.
+## Bio
+I received a BS in Computer Science from Cornell University in 2014, where I was fortunate to work with Prof. Ramin Zabih and Prof. Bobby Kleinberg.
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+Previously, I worked on understanding statistical-computational tradeoffs in high-dimensional statistics with Prof. Guy Bresler for my SM thesis at MIT.
 
-# Header 1
+I have interned at Waymo, Dropbox, and Google.
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+<p>&nbsp;</p>
 
-## Header 2
+## Research
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+**On Distinctive Properties of Universal Perturbations**\
+Sung Min Park, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Madry\
+2021
 
-### Header 3
+**Sparse PCA from Sparse Linear Regression**\
+Guy Bresler, Sung Min Park, Madalina Persu (*alphabetical order*)\
+NeurIPS 2018\
+[(paper)](https://arxiv.org/abs/1811.10106)
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+**On the Equivalence of Sparse Statistical Problems**\
+Sung Min Park\
+S.M. thesis 2016\
+[(link)](/assets/files/sm_thesis.pdf)
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+**Structured learning of sum-of-submodular higher order energy functions**\
+Alexander Fix, Thorsten Joachims, Sung Min Park, Ramin Zabih\
+ICCV 2013\
+[(paper)](/assets/files/submodular.pdf)
 
-#### Header 4
+<p>&nbsp;</p>
+## Personal
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+I grew up in Seoul and Singapore, where I attended [SAS](https://www.sas.edu.sg/).
 
-##### Header 5
+From 2016-18, I served in the Republic of Korea Army.
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+In my free time, I like working out, trying [new](https://www.loopkickstricking.com/) [sports](/assets/img/rowing.jpg), and learning physics.
 
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+<p>&nbsp;</p>
