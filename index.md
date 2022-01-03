@@ -20,7 +20,8 @@ I have interned at Waymo, Dropbox, and Google.
 
 **On Distinctive Properties of Universal Perturbations**\
 Sung Min Park, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Madry\
-2021
+2021\
+[(arxiv)](https://arxiv.org/abs/2112.15329)
 
 **Sparse PCA from Sparse Linear Regression**\
 Guy Bresler, Sung Min Park, Madalina Persu (*alphabetical order*)\
@@ -29,13 +30,27 @@ NeurIPS 2018\
 
 **On the Equivalence of Sparse Statistical Problems**\
 Sung Min Park\
-S.M. thesis 2016\
+SM thesis 2016\
 [(pdf)](/assets/files/sm_thesis.pdf)
 
 **Structured learning of sum-of-submodular higher order energy functions**\
 Alexander Fix, Thorsten Joachims, Sung Min Park, Ramin Zabih\
 ICCV 2013\
 [(pdf)](/assets/files/submodular.pdf)
+
+
+
+<p>&nbsp;</p>
+## Other writings
+
+**Fourier Theoretic Probabilistic Inference over Permutations**\
+Cornell, Spring 2014\
+[(pdf)](/assets/files/fourier.pdf)
+
+**Analysis of pipage method for k-max coverage**\
+Cornell, Fall 2012\
+[(pdf)](/assets/files/max_coverage.pdf)
+
 
 <p>&nbsp;</p>
 ## Personal
