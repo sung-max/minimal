@@ -2,6 +2,7 @@
 layout: default
 ---
 
+<p>&nbsp;</p>
 I am a PhD student at MIT EECS, advised by [Prof. Aleksander Madry](http://madry-lab.ml/).
 
 I work on machine learning, focusing on problems related to robustness.
@@ -59,6 +60,6 @@ I grew up in Seoul and Singapore, where I attended [SAS](https://www.sas.edu.sg/
 
 From 2016-18, I served in the Republic of Korea Army.
 
-In my free time, I like working out, trying [new](https://www.loopkickstricking.com/) [sports](/assets/img/rowing.jpg), and learning physics.
+In my free time, I like working out, [rowing](/assets/img/rowing.jpg), trying new [sports](https://www.loopkickstricking.com/), and learning [physics](https://sung-max.github.io/learning-qft/).
 
 <p>&nbsp;</p>
