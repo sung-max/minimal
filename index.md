@@ -3,7 +3,7 @@ layout: default
 ---
 
 <p>&nbsp;</p>
-I am a PhD student at MIT EECS, advised by [Prof. Aleksander Madry](http://madry-lab.ml/).
+I am a PhD student at MIT EECS, advised by [Prof. Aleksander Mądry](http://madry-lab.ml/).
 
 I work on machine learning, focusing on problems related to robustness.
 <p>&nbsp;</p>
@@ -20,12 +20,12 @@ I have interned at Waymo, Dropbox, and Google.
 ## Research
 
 **On Distinctive Properties of Universal Perturbations**\
-Sung Min Park, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Madry\
+Sung Min Park, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Mądry\
 2021\
 [(arxiv)](https://arxiv.org/abs/2112.15329)
 
 **Sparse PCA from Sparse Linear Regression**\
-Guy Bresler, Sung Min Park, Madalina Persu (*alphabetical order*)\
+(α-β order) Guy Bresler, Sung Min Park, Madalina Persu\
 NeurIPS 2018\
 [(arxiv)](https://arxiv.org/abs/1811.10106) [(poster)](/assets/files/neurips_2018_poster.pdf)
 
