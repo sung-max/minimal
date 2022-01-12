@@ -11,7 +11,7 @@ I work on machine learning, focusing on problems related to robustness.
 ## Bio
 I received a BS in Computer Science from Cornell University in 2014, where I was fortunate to work with Prof. Ramin Zabih and Prof. Bobby Kleinberg.
 
-Previously, I worked on understanding statistical-computational tradeoffs in high-dimensional statistics with Prof. Guy Bresler for my SM thesis at MIT.
+Previously at MIT, I worked on understanding statistical-computational tradeoffs in high-dimensional statistics with Prof. Guy Bresler for my SM thesis.
 
 I have interned at Waymo, Dropbox, and Google.
 
