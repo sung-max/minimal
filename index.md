@@ -3,7 +3,8 @@ layout: default
 ---
 
 <p>&nbsp;</p>
-I am a PhD student at MIT EECS, advised by [Prof. Aleksander Mądry](http://madry-lab.ml/).
+## About
+Hi! I am a PhD student at MIT EECS, advised by [Prof. Aleksander Mądry](http://madry-lab.ml/).
 
 I work on machine learning, focusing on problems related to robustness.
 <p>&nbsp;</p>
@@ -13,11 +14,16 @@ I received a BS in Computer Science from Cornell University in 2014, where I was
 
 Previously at MIT, I worked on understanding statistical-computational tradeoffs in high-dimensional statistics with Prof. Guy Bresler for my SM thesis.
 
-I have interned at Waymo, Dropbox, and Google.
+In the past, I have interned at Waymo, Dropbox, and Google.
 
 <p>&nbsp;</p>
 
 ## Research
+
+**Datamodels: Predicting Predictions from Training Data**\
+Andrew Ilyas\*, Sung Min Park\*, Logan Engstrom\*, Guillaume Leclerc, Aleksander Mądry\
+2022\
+[(arxiv)](https://arxiv.org/abs/2202.00622) [(blog)](https://gradientscience.org/datamodels-1/) [(data)](https://github.com/MadryLab/datamodels-data)
 
 **On Distinctive Properties of Universal Perturbations**\
 Sung Min Park, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Mądry\
