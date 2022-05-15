@@ -22,8 +22,8 @@ In the past, I have interned at Waymo, Dropbox, and Google.
 
 **Datamodels: Predicting Predictions from Training Data**\
 Andrew Ilyas\*, Sung Min Park\*, Logan Engstrom\*, Guillaume Leclerc, Aleksander Mądry\
-2022\
-[(arxiv)](https://arxiv.org/abs/2202.00622) [(blog)](https://gradientscience.org/datamodels-1/) [(data)](https://github.com/MadryLab/datamodels-data)
+ICML 2022\
+[(arxiv)](https://arxiv.org/abs/2202.00622) (blog [[1]](https://gradientscience.org/datamodels-1/)[[2]](https://gradientscience.org/datamodels-2/)) [(data)](https://github.com/MadryLab/datamodels-data)
 
 **On Distinctive Properties of Universal Perturbations**\
 Sung Min Park, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Mądry\
@@ -33,7 +33,7 @@ Sung Min Park, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Mądry\
 **Sparse PCA from Sparse Linear Regression**\
 (α-β order) Guy Bresler, Sung Min Park, Madalina Persu\
 NeurIPS 2018\
-[(arxiv)](https://arxiv.org/abs/1811.10106) [(poster)](/assets/files/neurips_2018_poster.pdf)
+[(arxiv)](https://arxiv.org/abs/1811.10106) [(poster)](/assets/files/neurips_2018_poster.pdf) [(code)](https://github.com/sung-max/SPCAvSLR)
 
 **On the Equivalence of Sparse Statistical Problems**\
 Sung Min Park\
@@ -60,12 +60,18 @@ Cornell, Fall 2012\
 
 
 <p>&nbsp;</p>
+## Software
+
+**Fast Forward Computer Vision (FFCV)**\
+[(code)](https://github.com/libffcv/ffcv)
+
+<p>&nbsp;</p>
 ## Personal
 
 I grew up in Seoul and Singapore, where I attended [SAS](https://www.sas.edu.sg/).
 
 From 2016-18, I served in the Republic of Korea Army.
 
-In my free time, I like working out, [rowing](/assets/img/rowing.jpg), trying new [sports](https://www.loopkickstricking.com/), and learning [physics](https://sung-max.github.io/learning-qft/).
+In my free time, I like lifting, [rowing](/assets/img/rowing.jpg), playing basketball, and learning [physics](https://sung-max.github.io/learning-qft/).
 
 <p>&nbsp;</p>
