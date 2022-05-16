@@ -23,27 +23,27 @@ In the past, I have interned at Waymo, Dropbox, and Google.
 **Datamodels: Predicting Predictions from Training Data**\
 Andrew Ilyas\*, Sung Min Park\*, Logan Engstrom\*, Guillaume Leclerc, Aleksander Mądry\
 ICML 2022\
-[(arxiv)](https://arxiv.org/abs/2202.00622) (blog [[1]](https://gradientscience.org/datamodels-1/)[[2]](https://gradientscience.org/datamodels-2/)) [(data)](https://github.com/MadryLab/datamodels-data)
+[[<u>arxiv</u>]](https://arxiv.org/abs/2202.00622) [blog [<u>part 1</u>](https://gradientscience.org/datamodels-1/) [<u>part 2</u>](https://gradientscience.org/datamodels-2/)] [[<u>data</u>]](https://github.com/MadryLab/datamodels-data)
 
 **On Distinctive Properties of Universal Perturbations**\
 Sung Min Park, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Mądry\
 2021\
-[(arxiv)](https://arxiv.org/abs/2112.15329)
+[[<u>arxiv</u>]](https://arxiv.org/abs/2112.15329)
 
 **Sparse PCA from Sparse Linear Regression**\
 (α-β order) Guy Bresler, Sung Min Park, Madalina Persu\
 NeurIPS 2018\
-[(arxiv)](https://arxiv.org/abs/1811.10106) [(poster)](/assets/files/neurips_2018_poster.pdf) [(code)](https://github.com/sung-max/SPCAvSLR)
+[[<u>arxiv</u>]](https://arxiv.org/abs/1811.10106) [[<u>poster</u>]](/assets/files/neurips_2018_poster.pdf) [[<u>code</u>]](https://github.com/sung-max/SPCAvSLR)
 
 **On the Equivalence of Sparse Statistical Problems**\
 Sung Min Park\
 SM thesis 2016\
-[(pdf)](/assets/files/sm_thesis.pdf)
+[[<u>pdf</u>]](/assets/files/sm_thesis.pdf)
 
 **Structured learning of sum-of-submodular higher order energy functions**\
 Alexander Fix, Thorsten Joachims, Sung Min Park, Ramin Zabih\
 ICCV 2013\
-[(pdf)](/assets/files/submodular.pdf)
+[[<u>pdf</u>]](/assets/files/submodular.pdf)
 
 
 
@@ -52,18 +52,18 @@ ICCV 2013\
 
 **Fourier Theoretic Probabilistic Inference over Permutations**\
 Cornell, Spring 2014\
-[(pdf)](/assets/files/fourier.pdf)
+[[<u>pdf</u>]](/assets/files/fourier.pdf)
 
 **Analysis of pipage method for k-max coverage**\
 Cornell, Fall 2012\
-[(pdf)](/assets/files/max_coverage.pdf)
+[[<u>pdf</u>]](/assets/files/max_coverage.pdf)
 
 
 <p>&nbsp;</p>
 ## Software
 
 **Fast Forward Computer Vision (FFCV)**\
-[(code)](https://github.com/libffcv/ffcv)
+[[<u>code</u>]](https://github.com/libffcv/ffcv)
 
 <p>&nbsp;</p>
 ## Personal
