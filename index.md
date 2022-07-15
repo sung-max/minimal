@@ -20,6 +20,11 @@ In the past, I have interned at Waymo, Dropbox, and Google.
 
 ## Research
 
+**A Data-Based Perspective on Transfer Learning**\
+Saachi Jain\*, Hadi Salman\*, Alaa Khaddaj\*, Eric Wong, Sung Min Park, Aleksander Mądry\
+2022\
+[[<u>arxiv</u>]](https://arxiv.org/abs/2207.05739) [[blog](https://gradientscience.org/data-transfer/)]
+
 **Datamodels: Predicting Predictions from Training Data**\
 Andrew Ilyas\*, Sung Min Park\*, Logan Engstrom\*, Guillaume Leclerc, Aleksander Mądry\
 ICML 2022\
