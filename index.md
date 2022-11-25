@@ -4,9 +4,10 @@ layout: default
 
 <p>&nbsp;</p>
 ## About
-Hi! I am a PhD student at MIT EECS, advised by [Prof. Aleksander Mądry](http://madry-lab.ml/).
+Hi! I am a PhD student at MIT EECS and CSAIL, fortunate to be advised by [Prof. Aleksander Mądry](http://madry-lab.ml/).
 
-I work on machine learning, focusing on problems related to robustness.
+I'm broadly interested in machine learning phenomena.
+I'm particularly interested in understanding various aspects of modern machine learning---such as generalization, robustness, and interpretability---through the lens of data.
 <p>&nbsp;</p>
 
 ## Bio
@@ -20,15 +21,20 @@ In the past, I have interned at Waymo, Dropbox, and Google.
 
 ## Research
 
+**ModelDiff: A Framework for Comparing Learning Algorithms**\
+Harshay Shah\*, Sung Min Park\*, Andrew Ilyas\*, Aleksander Mądry \
+2022\
+[[<u>arxiv</u>]](https://arxiv.org/abs/2211.12491) [[<u>blog</u>](https://gradientscience.org/modeldiff/)][[<u>code</u>](https://github.com/MadryLab/modeldiff)]
+
 **A Data-Based Perspective on Transfer Learning**\
 Saachi Jain\*, Hadi Salman\*, Alaa Khaddaj\*, Eric Wong, Sung Min Park, Aleksander Mądry\
 2022\
-[[<u>arxiv</u>]](https://arxiv.org/abs/2207.05739) [[blog](https://gradientscience.org/data-transfer/)]
+[[<u>arxiv</u>]](https://arxiv.org/abs/2207.05739) [[<u>blog</u>](https://gradientscience.org/data-transfer/)]
 
 **Datamodels: Predicting Predictions from Training Data**\
 Andrew Ilyas\*, Sung Min Park\*, Logan Engstrom\*, Guillaume Leclerc, Aleksander Mądry\
 ICML 2022\
-[[<u>arxiv</u>]](https://arxiv.org/abs/2202.00622) [blog [<u>part 1</u>](https://gradientscience.org/datamodels-1/) [<u>part 2</u>](https://gradientscience.org/datamodels-2/)] [[<u>data</u>]](https://github.com/MadryLab/datamodels-data)
+[[<u>arxiv</u>]](https://arxiv.org/abs/2202.00622) [blog [<u>part 1</u>](https://gradientscience.org/datamodels-1/) [<u>part 2</u>](https://gradientscience.org/datamodels-2/)] [[<u>code</u>](https://github.com/MadryLab/datamodels)][[<u>data</u>]](https://github.com/MadryLab/datamodels-data)
 
 **On Distinctive Properties of Universal Perturbations**\
 Sung Min Park, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Mądry\
@@ -53,7 +59,11 @@ ICCV 2013\
 
 
 <p>&nbsp;</p>
-## Other writings
+## Misc
+
+**Region Detection and Geometry Prediction**\
+Patent from work during Summer 2020 internship at Waymo\
+[[<u>pdf</u>]](/assets/files/waymo_patent.pdf)
 
 **Fourier Theoretic Probabilistic Inference over Permutations**\
 Cornell, Spring 2014\
