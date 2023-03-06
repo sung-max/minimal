@@ -26,9 +26,14 @@ Harshay Shah\*, Sung Min Park\*, Andrew Ilyas\*, Aleksander Mądry \
 2022\
 [[<u>arxiv</u>]](https://arxiv.org/abs/2211.12491) [[<u>blog</u>](https://gradientscience.org/modeldiff/)][[<u>code</u>](https://github.com/MadryLab/modeldiff)]
 
+**FFCV: Accelerating Training by Removing Data Bottlenecks**\
+Guillaume Leclerc, Andrew Ilyas, Logan Engstrom, Sung Min Park, Hadi Salman, Aleksander Mądry \
+CVPR 2023\
+[[<u>code</u>](https://github.com/libffcv/ffcv)]
+
 **A Data-Based Perspective on Transfer Learning**\
 Saachi Jain\*, Hadi Salman\*, Alaa Khaddaj\*, Eric Wong, Sung Min Park, Aleksander Mądry\
-2022\
+CVPR 2023\
 [[<u>arxiv</u>]](https://arxiv.org/abs/2207.05739) [[<u>blog</u>](https://gradientscience.org/data-transfer/)]
 
 **Datamodels: Predicting Predictions from Training Data**\
