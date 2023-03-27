@@ -6,20 +6,31 @@ layout: default
 ## About
 Hi! I am a PhD student at MIT EECS and CSAIL, fortunate to be advised by [Prof. Aleksander Mądry](http://madry-lab.ml/).
 
-I'm broadly interested in machine learning phenomena.
-I'm particularly interested in understanding various aspects of modern machine learning---such as generalization, robustness, and interpretability---through the lens of data.
+I'm broadly interested in understanding and improving machine learning methodology.
+In particular, I'm interested in viewing ML models through the lens of *data*:
+ - How do we *attribute* model predictions back to training data?
+ - How do we find latent structure (e.g., subpopulations) in our data automatically in a way that's faithful to the model rather than human priors?
+ - What are the underlying reasons for the observed scaling laws? How do we go beyond them?
+
 <p>&nbsp;</p>
 
 ## Bio
-I received a BS in Computer Science from Cornell University in 2014, where I was fortunate to work with Prof. Ramin Zabih and Prof. Bobby Kleinberg.
-
 Previously at MIT, I worked on understanding statistical-computational tradeoffs in high-dimensional statistics with Prof. Guy Bresler for my SM thesis.
+I was supported by the MIT Akamai Presidential Fellowship and the Samsung Scholarship.
+
+I received a BS in Computer Science from Cornell University in 2014, where I was fortunate to work with Prof. Ramin Zabih and Prof. Bobby Kleinberg.
 
 In the past, I have interned at Waymo, Dropbox, and Google.
 
 <p>&nbsp;</p>
 
 ## Research
+
+**TRAK: Attributing Model Behavior at Scale**\
+Sung Min Park\*, Kristian Georgiev\*, Andrew Ilyas\*, Guillaume Leclerc, Aleksander Mądry \
+2023\
+[[<u>arxiv</u>]](https://arxiv.org/abs/2303.14186) [[<u>blog</u>](https://gradientscience.org/trak/)][[<u>code</u>](https://github.com/MadryLab/trak)]
+[[<u>website</u>]](https://trak.csail.mit.edu/)
 
 **ModelDiff: A Framework for Comparing Learning Algorithms**\
 Harshay Shah\*, Sung Min Park\*, Andrew Ilyas\*, Aleksander Mądry \
