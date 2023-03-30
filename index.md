@@ -27,7 +27,7 @@ In the past, I have interned at Waymo, Dropbox, and Google.
 
 ## Research
 
-**TRAK: Attributing Model Behavior at Scale**\
+<span style="color:green">[NEW]</span> **TRAK: Attributing Model Behavior at Scale**\
 <u>Sung Min Park*</u>, Kristian Georgiev\*, Andrew Ilyas\*, Guillaume Leclerc, Aleksander Mądry \
 2023\
 [[<u>arxiv</u>]](https://arxiv.org/abs/2303.14186) [[<u>blog</u>](https://gradientscience.org/trak/)][[<u>code</u>](https://github.com/MadryLab/trak)]
@@ -74,6 +74,15 @@ ICCV 2013\
 [[<u>pdf</u>]](/assets/files/submodular.pdf)
 
 
+<p>&nbsp;</p>
+## Talks
+
+* **Feb 2023** [MIT LIDS Student Conference](https://lidsconf.mit.edu/2023/program.html)
+* **Aug 2022** [UMN ML Seminar](https://sites.google.com/umn.edu/machine-learning)
+* **Feb 2022** [LIDS & Stats Tea](https://lids.mit.edu/news-and-events/lids-stats-tea)
+* **Jan 2022** [MIT LIDS Student Conference](https://lidsconf.mit.edu/2022/program.html)
+
+
 
 <p>&nbsp;</p>
 ## Misc
@@ -90,12 +99,6 @@ Cornell, Spring 2014\
 Cornell, Fall 2012\
 [[<u>pdf</u>]](/assets/files/max_coverage.pdf)
 
-
-<p>&nbsp;</p>
-## Software
-
-**Fast Forward Computer Vision (FFCV)**\
-[[<u>code</u>]](https://github.com/libffcv/ffcv)
 
 <p>&nbsp;</p>
 ## Personal
