@@ -29,13 +29,13 @@ In the past, I have interned at Waymo, Dropbox, and Google.
 
 <span style="color:green">[NEW]</span> **TRAK: Attributing Model Behavior at Scale**\
 <u>Sung Min Park*</u>, Kristian Georgiev\*, Andrew Ilyas\*, Guillaume Leclerc, Aleksander Mądry \
-2023\
+ICML 2023 (*Oral presentation*)\
 [[<u>arxiv</u>]](https://arxiv.org/abs/2303.14186) [[<u>blog</u>](https://gradientscience.org/trak/)][[<u>code</u>](https://github.com/MadryLab/trak)]
 [[<u>website</u>]](https://trak.csail.mit.edu/)
 
 **ModelDiff: A Framework for Comparing Learning Algorithms**\
 Harshay Shah\*, <u>Sung Min Park*</u>, Andrew Ilyas\*, Aleksander Mądry \
-2022\
+ICML 2023\
 [[<u>arxiv</u>]](https://arxiv.org/abs/2211.12491) [[<u>blog</u>](https://gradientscience.org/modeldiff/)][[<u>code</u>](https://github.com/MadryLab/modeldiff)]
 
 **FFCV: Accelerating Training by Removing Data Bottlenecks**\
@@ -77,6 +77,9 @@ ICCV 2013\
 <p>&nbsp;</p>
 ## Talks
 
+* **May 2023** [LIDS & Stats Tea](https://lids.mit.edu/news-and-events/events/trak-attributing-model-behavior-scale)
+* **May 2023** MIT MLTea
+* **Apr 2023** [ML Collective Reading group](https://mlcollective.org/dlct/)
 * **Feb 2023** [MIT LIDS Student Conference](https://lidsconf.mit.edu/2023/program.html)
 * **Aug 2022** [UMN ML Seminar](https://sites.google.com/umn.edu/machine-learning)
 * **Feb 2022** [LIDS & Stats Tea](https://lids.mit.edu/news-and-events/lids-stats-tea)
