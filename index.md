@@ -4,7 +4,10 @@ layout: default
 
 <p>&nbsp;</p>
 ## About
-Hi! I am a PhD student at MIT EECS and CSAIL, fortunate to be advised by [Prof. Aleksander Mądry](http://madry-lab.ml/).
+Hi! I am a final-year PhD student at MIT EECS and CSAIL, fortunate to be advised by [Prof. Aleksander Mądry](http://madry-lab.ml/).
+
+<span style="color:green">[News]</span>  **I'm on the job market! Primarily looking for postdoc positions beginning ~Fall 2024 and relevant positions in industry research.**
+
 
 I'm broadly interested in understanding and improving machine learning (ML) methodology.
 In particular, I'm interested in viewing ML models through the lens of *data*:
@@ -27,9 +30,13 @@ In the past, I have interned at Waymo, Dropbox, and Google.
 
 ## Research
 
-<span style="color:green">[NEW]</span> **TRAK: Attributing Model Behavior at Scale**\
+**The Journey, Not the Destination: How Data Guides Diffusion Models**\
+Kristian Georgiev\*, Josh Vendrow\*, Hadi Salman, <u>Sung Min Park</u>, Aleksander Mądry \
+In preparation, 2023.
+
+**TRAK: Attributing Model Behavior at Scale**\
 <u>Sung Min Park*</u>, Kristian Georgiev\*, Andrew Ilyas\*, Guillaume Leclerc, Aleksander Mądry \
-ICML 2023 (*Oral presentation*)\
+ICML 2023 (**Oral presentation**)\
 [[<u>arxiv</u>]](https://arxiv.org/abs/2303.14186) [[<u>blog</u>](https://gradientscience.org/trak/)][[<u>code</u>](https://github.com/MadryLab/trak)]
 [[<u>website</u>]](https://trak.csail.mit.edu/)
 
@@ -108,8 +115,7 @@ Cornell, Fall 2012\
 
 I grew up in Seoul and Singapore, where I attended [SAS](https://www.sas.edu.sg/).
 
-From 2016-18, I served in the Republic of Korea Army, where I spent most of my free time
-trying to learn [QFT](https://sung-max.github.io/learning-qft/).
+From 2016-18, I served in the Republic of Korea Army, where I met an amazing group of people and spent most of my free time trying to learn [QFT](https://sung-max.github.io/learning-qft/).
 
-In my free time, I enjoy lifting, [rowing](/assets/img/rowing.jpg), playing basketball, and watching the NBA.
+In my free time, I enjoy lifting, playing basketball, [rowing](/assets/img/rowing.jpg), watching the NBA, and learning physics.
 <p>&nbsp;</p>
