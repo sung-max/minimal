@@ -4,16 +4,20 @@ layout: default
 
 <p>&nbsp;</p>
 ## About
-Hi! I am a final-year PhD student at MIT EECS and CSAIL, fortunate to be advised by [Prof. Aleksander Mądry](http://madry-lab.ml/).
+Hi! I am a final-year PhD student at MIT EECS and CSAIL, fortunate to be advised by [Prof. Aleksander Mądry](https://madrylab.csail.mit.edu/).
 
-<span style="color:green">[News]</span>  **I'm on the job market! Primarily looking for postdoc positions beginning ~Fall 2024 and relevant positions in industry research.**
+<span style="color:green">[News]</span>  **I'm on the job market! Primarily looking for academic postdoc positions beginning ~Fall 2024 and opportunities in industry research.**
+
+<span style="color:green">[News]</span>  **I'm co-organizing [ATTRIB @ NeurIPS '23](https://attrib-workshop.cc/), the first workshop on model behavior attribution!**
 
 
-I'm broadly interested in understanding and improving machine learning (ML) methodology.
-In particular, I'm interested in viewing ML models through the lens of *data*:
+I'm currently interested in understanding and improving machine learning (ML) methodology
+through the *lens of data*. Some questions I think about include:
  - How do we *attribute* model predictions back to training data?
- - How do we find latent structure (e.g., subpopulations) in our datasets automatically in a way that's faithful to the *model* (rather than human priors)?
+ - How do we *select* the right data for a given task?
  - Can we derive insights about ML phenomena (e.g., scaling laws, emergence) through this lens?
+
+ I'm also more broadly interested in the science of machine learning/deep learning.
 
 <p>&nbsp;</p>
 
