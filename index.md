@@ -36,7 +36,7 @@ In the past, I have interned at Waymo, Dropbox, and Google.
 
 **The Journey, Not the Destination: How Data Guides Diffusion Models**\
 Kristian Georgiev\*, Josh Vendrow\*, Hadi Salman, <u>Sung Min Park</u>, Aleksander Mądry \
-In preparation, 2023.
+[[<u>arxiv</u>]](https://arxiv.org/abs/2312.06205)
 
 **TRAK: Attributing Model Behavior at Scale**\
 <u>Sung Min Park*</u>, Kristian Georgiev\*, Andrew Ilyas\*, Guillaume Leclerc, Aleksander Mądry \
