@@ -8,7 +8,7 @@ Hi! I am a final-year PhD student at MIT EECS and CSAIL, fortunate to be advised
 
 <span style="color:green">[News]</span>  **I'm on the job market! Primarily looking for academic postdoc positions beginning ~Fall 2024 and opportunities in industry research.**
 
-<span style="color:green">[News]</span>  **I'm co-organizing [ATTRIB @ NeurIPS '23](https://attrib-workshop.cc/), the first workshop on model behavior attribution!**
+<span style="color:green">[News]</span>  **I recently co-organized [ATTRIB @ NeurIPS '23](https://attrib-workshop.cc/), the first workshop on model behavior attribution!**
 
 
 I'm currently interested in understanding and improving machine learning (ML) methodology
@@ -17,18 +17,18 @@ through the *lens of data*. Some questions I think about include:
  - How do we *select* the right data for a given task?
  - Can we derive insights about ML phenomena (e.g., scaling laws, emergence) through this lens?
 
- I'm also more broadly interested in the science of machine learning/deep learning.
+I'm also more broadly interested in the science of machine learning/deep learning.
 
 <p>&nbsp;</p>
 
 ## Bio
-Previously at MIT, I worked on understanding statistical-computational tradeoffs in high-dimensional statistics with Prof. Guy Bresler for my SM thesis.
+Previously at MIT, I worked on understanding statistical-computational tradeoffs in high-dimensional statistics with Prof. Guy Bresler for my SM thesis. Earlier during my PhD, I was supported by the MIT Akamai Presidential Fellowship and the Samsung Scholarship.
 
-Earlier during my PhD, I was supported by the MIT Akamai Presidential Fellowship and the Samsung Scholarship.
+From 2016-18, I served in the Republic of Korea Army in the top signals intelligence unit as a researcher.
 
-Prior to grad school, I received a BS in Computer Science from Cornell University in 2014, where I was fortunate to work with Prof. Ramin Zabih and Prof. Bobby Kleinberg.
+Prior to grad school, I received a BS in Computer Science from Cornell University (2011-14), where I was fortunate to work with Prof. Ramin Zabih and Prof. Bobby Kleinberg.
 
-In the past, I have interned at Waymo, Dropbox, and Google.
+I have interned at Waymo, Dropbox, and Google.
 
 <p>&nbsp;</p>
 
@@ -42,7 +42,7 @@ Kristian Georgiev\*, Josh Vendrow\*, Hadi Salman, <u>Sung Min Park</u>, Aleksand
 <u>Sung Min Park*</u>, Kristian Georgiev\*, Andrew Ilyas\*, Guillaume Leclerc, Aleksander Mądry \
 ICML 2023 (**Oral presentation**)\
 [[<u>arxiv</u>]](https://arxiv.org/abs/2303.14186) [[<u>blog</u>](https://gradientscience.org/trak/)][[<u>code</u>](https://github.com/MadryLab/trak)]
-[[<u>website</u>]](https://trak.csail.mit.edu/)
+[[<u>website</u>]](https://trak.csail.mit.edu/)[[<u>talk</u>](https://icml.cc/virtual/2023/oral/25526)]
 
 **ModelDiff: A Framework for Comparing Learning Algorithms**\
 Harshay Shah\*, <u>Sung Min Park*</u>, Andrew Ilyas\*, Aleksander Mądry \
@@ -117,9 +117,7 @@ Cornell, Fall 2012\
 <p>&nbsp;</p>
 ## Personal
 
-I grew up in Seoul and Singapore, where I attended [SAS](https://www.sas.edu.sg/).
+I grew up between the Bay Area, Seoul, and Singapore, where I attended [SAS](https://www.sas.edu.sg/).
 
-From 2016-18, I served in the Republic of Korea Army, where I met an amazing group of people and spent most of my free time trying to learn [QFT](https://sung-max.github.io/learning-qft/).
-
-In my free time, I enjoy lifting, playing basketball, [rowing](/assets/img/rowing.jpg), watching the NBA, and learning physics.
+In my free time, I enjoy lifting, basketball, [rowing](/assets/img/rowing.jpg), the NBA, watching movies, and learning [physics](https://sung-max.github.io/learning-qft/).
 <p>&nbsp;</p>
