@@ -6,16 +6,12 @@ layout: default
 ## About
 Hi! I am a final-year PhD student at MIT EECS and CSAIL, fortunate to be advised by [Prof. Aleksander Mądry](https://madrylab.csail.mit.edu/).
 
-<span style="color:green">[News]</span>  **I'm on the job market! Primarily looking for academic postdoc positions beginning ~Fall 2024 and opportunities in industry research.**
-
-<span style="color:green">[News]</span>  **I recently co-organized [ATTRIB @ NeurIPS '23](https://attrib-workshop.cc/), the first workshop on model behavior attribution!**
-
 
 I'm currently interested in understanding and improving machine learning (ML) methodology
 through the *lens of data*. Some questions I think about include:
  - How do we *attribute* model predictions back to training data?
  - How do we *select* the right data for a given task?
- - Can we derive insights about ML phenomena (e.g., scaling laws, emergence) through this lens?
+ - Can we derive insights about ML phenomena (e.g., scaling laws, emergence, in-context learning) through this lens?
 
 I'm also more broadly interested in the science of machine learning/deep learning.
 
@@ -88,6 +84,8 @@ ICCV 2013\
 <p>&nbsp;</p>
 ## Talks
 
+* **Mar 2024** Stanford ML lunch
+* **Jul 2023** [ICML Oral](https://icml.cc/virtual/2023/oral/25526)
 * **May 2023** [LIDS & Stats Tea](https://lids.mit.edu/news-and-events/events/trak-attributing-model-behavior-scale)
 * **May 2023** MIT MLTea
 * **Apr 2023** [ML Collective Reading group](https://mlcollective.org/dlct/)
@@ -119,5 +117,5 @@ Cornell, Fall 2012\
 
 I grew up between the Bay Area, Seoul, and Singapore, where I attended [SAS](https://www.sas.edu.sg/).
 
-In my free time, I enjoy lifting, basketball, [rowing](/assets/img/rowing.jpg), the NBA, watching movies, and learning [physics](https://sung-max.github.io/learning-qft/).
+In my free time, I enjoy lifting, playing basketball, [rowing](/assets/img/rowing.jpg), watching the NBA (nuggets!), watching movies, and learning [physics](https://sung-max.github.io/learning-qft/) and math.
 <p>&nbsp;</p>
