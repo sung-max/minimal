@@ -16,7 +16,7 @@ through the *lens of data*. Some questions I think about include:
 I'm also more broadly interested in the science of machine learning/deep learning.
 
 
-<span style="color:green">[News]</span>  **I am co-organizing a tutorial at ICML '24 on [Data Attribution at Scale](https://icml.cc/virtual/2024/tutorial/35228)!**
+<span style="color:green">[News]</span>  **I am co-organizing a tutorial at ICML '24 on Data Attribution at Scale: [[video](https://icml.cc/virtual/2024/tutorial/35228)] [[notes](https://ml-data-tutorial.org/)]!**
 
 <span style="color:green">[News]</span>  **I defended in June! In September, I will begin my postdoc at Stanford working with Prof. Tatsu Hashimoto and Prof. Percy Liang**
 
