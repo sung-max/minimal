@@ -4,7 +4,7 @@ layout: default
 
 <p>&nbsp;</p>
 ## About
-Hi! I am a final-year PhD student at MIT EECS and CSAIL, fortunate to be advised by [Prof. Aleksander Mądry](https://madrylab.csail.mit.edu/).
+Hi! I am an incoming postdoc at Stanford working with Prof. Tatsu Hashimoto and Prof. Percy Liang. Recently, I finished my PhD at MIT, where I was fortunate to be advised by [Prof. Aleksander Mądry](https://madrylab.csail.mit.edu/).
 
 
 I'm currently interested in understanding and improving machine learning (ML) methodology
@@ -16,10 +16,7 @@ through the *lens of data*. Some questions I think about include:
 I'm also more broadly interested in the science of machine learning/deep learning.
 
 
-<span style="color:green">[News]</span>  **I am co-organizing a tutorial at ICML '24 on Data Attribution at Scale: [[video](https://icml.cc/virtual/2024/tutorial/35228)] [[notes](https://ml-data-tutorial.org/)]!**
-
-<span style="color:green">[News]</span>  **I defended in June! In September, I will begin my postdoc at Stanford working with Prof. Tatsu Hashimoto and Prof. Percy Liang**
-
+<span style="color:green">[News]</span>  **I co-presented a tutorial at ICML '24 on Data Attribution at Scale: [[video](https://icml.cc/virtual/2024/tutorial/35228)] [[notes](https://ml-data-tutorial.org/)]!**
 
 
 <p>&nbsp;</p>
