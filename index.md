@@ -4,7 +4,8 @@ layout: default
 
 <p>&nbsp;</p>
 ## About
-Hi! I am an incoming postdoc at Stanford working with Prof. Tatsu Hashimoto and Prof. Percy Liang. Recently, I finished my PhD at MIT, where I was fortunate to be advised by [Prof. Aleksander Mądry](https://madrylab.csail.mit.edu/).
+Hi! I am a postdoc at Stanford working with Prof. Tatsu Hashimoto, Prof. Percy Liang, and Prof. James Zou.
+I received my PhD from MIT, where I was fortunate to be advised by [Prof. Aleksander Mądry](https://madrylab.csail.mit.edu/).
 
 
 I'm currently interested in understanding and improving machine learning (ML) methodology
@@ -33,6 +34,11 @@ I have interned at Waymo, Dropbox, and Google.
 <p>&nbsp;</p>
 
 ## Research
+
+**Attribute-to-Delete: Machine Unlearning via Datamodel Matching**\
+Kristian Georgiev\*, Roy Rinberg\*, <u>Sung Min Park*</u>, Shivam Garg\*, Andrew Ilyas, Aleksander Mądry, Seth Neel \
+[[<u>arxiv</u>]](https://arxiv.org/abs/2410.23232) [[<u>blog</u>](https://t.co/QVgG2FlNmB)]
+
 
 **The Journey, Not the Destination: How Data Guides Diffusion Models**\
 Kristian Georgiev\*, Josh Vendrow\*, Hadi Salman, <u>Sung Min Park</u>, Aleksander Mądry \
