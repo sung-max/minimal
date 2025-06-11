@@ -18,6 +18,7 @@ I'm also more broadly interested in the science of machine learning/deep learnin
 
 
 <span style="color:green">[News]</span>  (Sep, '24) **I graudated! Thesis [[link](https://dspace.mit.edu/handle/1721.1/159360)]**
+
 <span style="color:green">[News]</span>  (July, '24) **I co-presented a tutorial at ICML '24 on Data Attribution at Scale: [[video](https://icml.cc/virtual/2024/tutorial/35228)] [[notes](https://ml-data-tutorial.org/)]**
 
 
