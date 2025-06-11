@@ -4,8 +4,8 @@ layout: default
 
 <p>&nbsp;</p>
 ## About
-Hi! I am a postdoc at Stanford working with Prof. Tatsu Hashimoto, Prof. Percy Liang, and Prof. James Zou.
-I received my PhD from MIT, where I was fortunate to be advised by [Prof. Aleksander Mądry](https://madrylab.csail.mit.edu/).
+Hi! I am a postdoc at Stanford CS working with Profs. Tatsu Hashimoto, Percy Liang, and James Zou.
+I received my PhD from MIT, where I was advised by [Prof. Aleksander Mądry](https://madrylab.csail.mit.edu/).
 
 
 I'm currently interested in understanding and improving machine learning (ML) methodology
@@ -17,7 +17,8 @@ through the *lens of data*. Some questions I think about include:
 I'm also more broadly interested in the science of machine learning/deep learning.
 
 
-<span style="color:green">[News]</span>  **I co-presented a tutorial at ICML '24 on Data Attribution at Scale: [[video](https://icml.cc/virtual/2024/tutorial/35228)] [[notes](https://ml-data-tutorial.org/)]!**
+<span style="color:green">[News]</span>  (Sep, '24) **I graudated! Thesis [[link](https://dspace.mit.edu/handle/1721.1/159360)]**
+<span style="color:green">[News]</span>  (July, '24) **I co-presented a tutorial at ICML '24 on Data Attribution at Scale: [[video](https://icml.cc/virtual/2024/tutorial/35228)] [[notes](https://ml-data-tutorial.org/)]**
 
 
 <p>&nbsp;</p>
@@ -37,6 +38,7 @@ I have interned at Waymo, Dropbox, and Google.
 
 **Attribute-to-Delete: Machine Unlearning via Datamodel Matching**\
 Kristian Georgiev\*, Roy Rinberg\*, <u>Sung Min Park*</u>, Shivam Garg\*, Andrew Ilyas, Aleksander Mądry, Seth Neel \
+ICLR 2025\
 [[<u>arxiv</u>]](https://arxiv.org/abs/2410.23232) [[<u>blog</u>](https://t.co/QVgG2FlNmB)]
 
 
