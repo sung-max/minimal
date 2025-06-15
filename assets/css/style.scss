@@ -1,12 +1,4 @@
+---
+---
+
 @import "jekyll-theme-minimal";
-
-/* Custom styles for the toggle */
-div:has(input[name="pub-toggle"]) {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 20px;
-}
-
-input[name="pub-toggle"] {
-  margin-right: 5px;
-}
