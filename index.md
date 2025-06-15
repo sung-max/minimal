@@ -37,62 +37,143 @@ I have interned at Waymo, Dropbox, and Google.
 
 ## Research
 
-**Attribute-to-Delete: Machine Unlearning via Datamodel Matching**\
-Kristian Georgiev\*, Roy Rinberg\*, <u>Sung Min Park*</u>, Shivam Garg\*, Andrew Ilyas, Aleksander Mądry, Seth Neel \
-ICLR 2025\
-[[<u>arxiv</u>]](https://arxiv.org/abs/2410.23232) [[<u>blog</u>](https://t.co/QVgG2FlNmB)]
+<div>
+  <label>
+    <input type="radio" name="pub-toggle" id="show-selected" checked>
+    Selected Publications
+  </label>
+  <label>
+    <input type="radio" name="pub-toggle" id="show-all">
+    All Publications
+  </label>
+</div>
 
+<div id="selected-pubs">
+  <!-- Selected papers -->
+  **Attribute-to-Delete: Machine Unlearning via Datamodel Matching**\
+  Kristian Georgiev\*, Roy Rinberg\*, <u>Sung Min Park*</u>, Shivam Garg\*, Andrew Ilyas, Aleksander Mądry, Seth Neel \
+  ICLR 2025\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2410.23232) [[<u>blog</u>](https://t.co/QVgG2FlNmB)]
 
-**The Journey, Not the Destination: How Data Guides Diffusion Models**\
-Kristian Georgiev\*, Josh Vendrow\*, Hadi Salman, <u>Sung Min Park</u>, Aleksander Mądry \
-[[<u>arxiv</u>]](https://arxiv.org/abs/2312.06205)
+  **The Journey, Not the Destination: How Data Guides Diffusion Models**\
+  Kristian Georgiev\*, Josh Vendrow\*, Hadi Salman, <u>Sung Min Park</u>, Aleksander Mądry \
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2312.06205)
 
-**TRAK: Attributing Model Behavior at Scale**\
-<u>Sung Min Park*</u>, Kristian Georgiev\*, Andrew Ilyas\*, Guillaume Leclerc, Aleksander Mądry \
-ICML 2023 (**Oral presentation**)\
-[[<u>arxiv</u>]](https://arxiv.org/abs/2303.14186) [[<u>blog</u>](https://gradientscience.org/trak/)][[<u>code</u>](https://github.com/MadryLab/trak)]
-[[<u>website</u>]](https://trak.csail.mit.edu/)[[<u>talk</u>](https://icml.cc/virtual/2023/oral/25526)]
+  **TRAK: Attributing Model Behavior at Scale**\
+  <u>Sung Min Park*</u>, Kristian Georgiev\*, Andrew Ilyas\*, Guillaume Leclerc, Aleksander Mądry \
+  ICML 2023 (**Oral presentation**)\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2303.14186) [[<u>blog</u>](https://gradientscience.org/trak/)][[<u>code</u>](https://github.com/MadryLab/trak)]
+  [[<u>website</u>]](https://trak.csail.mit.edu/)[[<u>talk</u>](https://icml.cc/virtual/2023/oral/25526)]
 
-**ModelDiff: A Framework for Comparing Learning Algorithms**\
-Harshay Shah\*, <u>Sung Min Park*</u>, Andrew Ilyas\*, Aleksander Mądry \
-ICML 2023\
-[[<u>arxiv</u>]](https://arxiv.org/abs/2211.12491) [[<u>blog</u>](https://gradientscience.org/modeldiff/)][[<u>code</u>](https://github.com/MadryLab/modeldiff)]
+  **ModelDiff: A Framework for Comparing Learning Algorithms**\
+  Harshay Shah\*, <u>Sung Min Park*</u>, Andrew Ilyas\*, Aleksander Mądry \
+  ICML 2023\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2211.12491) [[<u>blog</u>](https://gradientscience.org/modeldiff/)][[<u>code</u>](https://github.com/MadryLab/modeldiff)]
 
-**FFCV: Accelerating Training by Removing Data Bottlenecks**\
-Guillaume Leclerc, Andrew Ilyas, Logan Engstrom, <u>Sung Min Park</u>, Hadi Salman, Aleksander Mądry \
-CVPR 2023\
-[[<u>code</u>](https://github.com/libffcv/ffcv)]
+  **FFCV: Accelerating Training by Removing Data Bottlenecks**\
+  Guillaume Leclerc, Andrew Ilyas, Logan Engstrom, <u>Sung Min Park</u>, Hadi Salman, Aleksander Mądry \
+  CVPR 2023\
+  [[<u>code</u>](https://github.com/libffcv/ffcv)]
 
-**A Data-Based Perspective on Transfer Learning**\
-Saachi Jain\*, Hadi Salman\*, Alaa Khaddaj\*, Eric Wong, <u>Sung Min Park</u>, Aleksander Mądry\
-CVPR 2023\
-[[<u>arxiv</u>]](https://arxiv.org/abs/2207.05739) [[<u>blog</u>](https://gradientscience.org/data-transfer/)]
+  **A Data-Based Perspective on Transfer Learning**\
+  Saachi Jain\*, Hadi Salman\*, Alaa Khaddaj\*, Eric Wong, <u>Sung Min Park</u>, Aleksander Mądry\
+  CVPR 2023\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2207.05739) [[<u>blog</u>](https://gradientscience.org/data-transfer/)]
 
-**Datamodels: Predicting Predictions from Training Data**\
-Andrew Ilyas\*, <u>Sung Min Park*</u>, Logan Engstrom\*, Guillaume Leclerc, Aleksander Mądry\
-ICML 2022\
-[[<u>arxiv</u>]](https://arxiv.org/abs/2202.00622) [blog [<u>part 1</u>](https://gradientscience.org/datamodels-1/) [<u>part 2</u>](https://gradientscience.org/datamodels-2/)] [[<u>code</u>](https://github.com/MadryLab/datamodels)][[<u>data</u>]](https://github.com/MadryLab/datamodels-data)
+  **Datamodels: Predicting Predictions from Training Data**\
+  Andrew Ilyas\*, <u>Sung Min Park*</u>, Logan Engstrom\*, Guillaume Leclerc, Aleksander Mądry\
+  ICML 2022\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2202.00622) [blog [<u>part 1</u>](https://gradientscience.org/datamodels-1/) [<u>part 2</u>](https://gradientscience.org/datamodels-2/)] [[<u>code</u>](https://github.com/MadryLab/datamodels)][[<u>data</u>]](https://github.com/MadryLab/datamodels-data)
 
-**On Distinctive Properties of Universal Perturbations**\
-<u>Sung Min Park</u>, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Mądry\
-2021\
-[[<u>arxiv</u>]](https://arxiv.org/abs/2112.15329)
+  **On Distinctive Properties of Universal Perturbations**\
+  <u>Sung Min Park</u>, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Mądry\
+  2021\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2112.15329)
 
-**Sparse PCA from Sparse Linear Regression**\
-(α-β order) Guy Bresler, <u>Sung Min Park</u>, Madalina Persu\
-NeurIPS 2018\
-[[<u>arxiv</u>]](https://arxiv.org/abs/1811.10106) [[<u>poster</u>]](/assets/files/neurips_2018_poster.pdf) [[<u>code</u>]](https://github.com/sung-max/SPCAvSLR)
+  **Sparse PCA from Sparse Linear Regression**\
+  (α-β order) Guy Bresler, <u>Sung Min Park</u>, Madalina Persu\
+  NeurIPS 2018\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/1811.10106) [[<u>poster</u>]](/assets/files/neurips_2018_poster.pdf) [[<u>code</u>]](https://github.com/sung-max/SPCAvSLR)
 
-**On the Equivalence of Sparse Statistical Problems**\
-Sung Min Park\
-SM thesis 2016\
-[[<u>pdf</u>]](/assets/files/sm_thesis.pdf)
+  **On the Equivalence of Sparse Statistical Problems**\
+  Sung Min Park\
+  SM thesis 2016\
+  [[<u>pdf</u>]](/assets/files/sm_thesis.pdf)
 
-**Structured learning of sum-of-submodular higher order energy functions**\
-Alexander Fix, Thorsten Joachims, <u>Sung Min Park</u>, Ramin Zabih\
-ICCV 2013\
-[[<u>pdf</u>]](/assets/files/submodular.pdf)
+  **Structured learning of sum-of-submodular higher order energy functions**\
+  Alexander Fix, Thorsten Joachims, <u>Sung Min Park</u>, Ramin Zabih\
+  ICCV 2013\
+  [[<u>pdf</u>]](/assets/files/submodular.pdf)
+</div>
 
+<div id="all-pubs" style="display:none;">
+  <!-- All papers (currently same as selected) -->
+  **Attribute-to-Delete: Machine Unlearning via Datamodel Matching**\
+  Kristian Georgiev\*, Roy Rinberg\*, <u>Sung Min Park*</u>, Shivam Garg\*, Andrew Ilyas, Aleksander Mądry, Seth Neel \
+  ICLR 2025\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2410.23232) [[<u>blog</u>](https://t.co/QVgG2FlNmB)]
+
+  **The Journey, Not the Destination: How Data Guides Diffusion Models**\
+  Kristian Georgiev\*, Josh Vendrow\*, Hadi Salman, <u>Sung Min Park</u>, Aleksander Mądry \
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2312.06205)
+
+  **TRAK: Attributing Model Behavior at Scale**\
+  <u>Sung Min Park*</u>, Kristian Georgiev\*, Andrew Ilyas\*, Guillaume Leclerc, Aleksander Mądry \
+  ICML 2023 (**Oral presentation**)\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2303.14186) [[<u>blog</u>](https://gradientscience.org/trak/)][[<u>code</u>](https://github.com/MadryLab/trak)]
+  [[<u>website</u>]](https://trak.csail.mit.edu/)[[<u>talk</u>](https://icml.cc/virtual/2023/oral/25526)]
+
+  **ModelDiff: A Framework for Comparing Learning Algorithms**\
+  Harshay Shah\*, <u>Sung Min Park*</u>, Andrew Ilyas\*, Aleksander Mądry \
+  ICML 2023\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2211.12491) [[<u>blog</u>](https://gradientscience.org/modeldiff/)][[<u>code</u>](https://github.com/MadryLab/modeldiff)]
+
+  **FFCV: Accelerating Training by Removing Data Bottlenecks**\
+  Guillaume Leclerc, Andrew Ilyas, Logan Engstrom, <u>Sung Min Park</u>, Hadi Salman, Aleksander Mądry \
+  CVPR 2023\
+  [[<u>code</u>](https://github.com/libffcv/ffcv)]
+
+  **A Data-Based Perspective on Transfer Learning**\
+  Saachi Jain\*, Hadi Salman\*, Alaa Khaddaj\*, Eric Wong, <u>Sung Min Park</u>, Aleksander Mądry\
+  CVPR 2023\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2207.05739) [[<u>blog</u>](https://gradientscience.org/data-transfer/)]
+
+  **Datamodels: Predicting Predictions from Training Data**\
+  Andrew Ilyas\*, <u>Sung Min Park*</u>, Logan Engstrom\*, Guillaume Leclerc, Aleksander Mądry\
+  ICML 2022\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2202.00622) [blog [<u>part 1</u>](https://gradientscience.org/datamodels-1/) [<u>part 2</u>](https://gradientscience.org/datamodels-2/)] [[<u>code</u>](https://github.com/MadryLab/datamodels)][[<u>data</u>]](https://github.com/MadryLab/datamodels-data)
+
+  **On Distinctive Properties of Universal Perturbations**\
+  <u>Sung Min Park</u>, Kuo-An Wei, Kai Xiao, Jerry Li, Aleksander Mądry\
+  2021\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/2112.15329)
+
+  **Sparse PCA from Sparse Linear Regression**\
+  (α-β order) Guy Bresler, <u>Sung Min Park</u>, Madalina Persu\
+  NeurIPS 2018\
+  [[<u>arxiv</u>]](https://arxiv.org/abs/1811.10106) [[<u>poster</u>]](/assets/files/neurips_2018_poster.pdf) [[<u>code</u>]](https://github.com/sung-max/SPCAvSLR)
+
+  **On the Equivalence of Sparse Statistical Problems**\
+  Sung Min Park\
+  SM thesis 2016\
+  [[<u>pdf</u>]](/assets/files/sm_thesis.pdf)
+
+  **Structured learning of sum-of-submodular higher order energy functions**\
+  Alexander Fix, Thorsten Joachims, <u>Sung Min Park</u>, Ramin Zabih\
+  ICCV 2013\
+  [[<u>pdf</u>]](/assets/files/submodular.pdf)
+</div>
+
+<script>
+document.getElementById('show-selected').addEventListener('change', function() {
+  document.getElementById('selected-pubs').style.display = '';
+  document.getElementById('all-pubs').style.display = 'none';
+});
+document.getElementById('show-all').addEventListener('change', function() {
+  document.getElementById('selected-pubs').style.display = 'none';
+  document.getElementById('all-pubs').style.display = '';
+});
+</script>
 
 <p>&nbsp;</p>
 ## Talks
