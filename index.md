@@ -5,8 +5,8 @@ layout: default
 <p>&nbsp;</p>
 ## About
 I am a postdoc at Stanford CS working with Profs. Tatsu Hashimoto, Percy Liang, and James Zou.
-I received my PhD from MIT, where I was advised by Prof. Aleksander Mądry. Prior to that,
-I received by BS in Computer Science from Cornell, where I was fortunate to work with Prof. Ramin Zabih and Prof. Bobby Kleinberg.
+I did my PhD at MIT, where I was advised by Prof. Aleksander Mądry. Prior to that,
+I studied Computer Science at Cornell, where I was fortunate to work with Prof. Ramin Zabih and Prof. Bobby Kleinberg.
 
 I'm broadly interested in the science of machine learning.
 
