@@ -4,13 +4,14 @@ layout: default
 
 <p>&nbsp;</p>
 ## About
-I am a postdoc at Stanford CS working with Profs. Tatsu Hashimoto, Percy Liang, and James Zou.
+I am currently a Senior Research Scientist at Google DeepMind, working on Gemini Security and Privacy.
+Previously, I was a postdoc at Stanford CS advised by Tatsu Hashimoto, Percy Liang, and James Zou.
 I did my PhD at MIT, where I was advised by Prof. Aleksander Mądry. Prior to that,
-I studied Computer Science at Cornell, where I was fortunate to work with Prof. Ramin Zabih and Prof. Bobby Kleinberg.
+I studied Computer Science at Cornell, where I was fortunate to work with Ramin Zabih and Bobby Kleinberg.
 
 I'm broadly interested in the science of machine learning.
 
-Recently, my interests have been in understanding and improving machine learning methodology
+My research focus has been in understanding and improving machine learning methodology
 through the *lens of data*:
  - How do we *attribute* model predictions back to training data? (e.g., see our recent ICML tutorial [[video](https://icml.cc/virtual/2024/tutorial/35228)] [[notes](https://ml-data-tutorial.org/)])
  - How do we *select* (and optimize) the right data for a given task?
