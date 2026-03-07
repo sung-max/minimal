@@ -5,9 +5,11 @@ layout: default
 <p>&nbsp;</p>
 ## About
 I am currently a Senior Research Scientist at Google DeepMind, working on Gemini Security and Privacy.
+
 Previously, I was a postdoc at Stanford CS advised by Tatsu Hashimoto, Percy Liang, and James Zou.
-I did my PhD at MIT, where I was advised by Prof. Aleksander Mądry. Prior to that,
-I studied Computer Science at Cornell, where I was fortunate to work with Ramin Zabih and Bobby Kleinberg.
+I did my PhD at MIT, where I was advised by Prof. Aleksander Mądry.
+For my SM thesis, I worked on statistical-computational tradeoffs in high-dimensional statistics with Guy Bresler.
+And where it all began: I studied Computer Science at Cornell, where I was fortunate to work with Ramin Zabih and Bobby Kleinberg.
 
 I'm broadly interested in the science of machine learning.
 
@@ -39,7 +41,7 @@ through the *lens of data*:
 **Attribute-to-Delete: Machine Unlearning via Datamodel Matching**<br>
 Kristian Georgiev\*, Roy Rinberg\*, <u>Sung Min Park*</u>, Shivam Garg\*, Andrew Ilyas, Aleksander Mądry, Seth Neel <br>
 ICLR 2025<br>
-[[<u>arxiv</u>]](https://arxiv.org/abs/2410.23232) [[<u>blog</u>](https://t.co/QVgG2FlNmB)]
+[[<u>arxiv</u>]](https://arxiv.org/abs/2410.23232)
 </div>
 
 <div class="pub-item" data-selected="false" markdown="1">
@@ -185,19 +187,13 @@ Cornell, Fall 2012\
 
 <p>&nbsp;</p>
 
-## Bio
-Earlier in grad school, I worked on understanding statistical-computational tradeoffs in high-dimensional statistics with Prof. Guy Bresler for my SM thesis. During my PhD, I was partially supported by the MIT Akamai Presidential Fellowship and the Samsung Scholarship.
-
-From 2016-18, I took a leave from grad school to serve in the Republic of Korea Army in the top signals intelligence unit as a researcher.
-
-I have interned at Waymo, Dropbox, and Google.
-
-<p>&nbsp;</p>
-
 
 ## Personal
 
 I grew up between the Bay Area, Seoul, and Singapore, where I attended [SAS](https://www.sas.edu.sg/).
 
-In my free time, I enjoy working out, playing basketball, [rowing](/assets/img/rowing.jpg), watching the NBA (nuggets!), watching movies, and learning [theoretical physics](https://sung-max.github.io/learning-qft/) and math.
+From 2016-18, I took a leave from grad school to serve in the Republic of Korea Army in the top signals intelligence unit as a researcher.
+
+In my free time, I like to lift, play and watch basketball (Nuggets), run or bike outside, and learn [theoretical physics](https://sung-max.github.io/learning-qft/) and math.
+In the past, I've also enjoyed [rowing](/assets/img/rowing.jpg) and I'm also not terrible at most racket sports.
 <p>&nbsp;</p>
