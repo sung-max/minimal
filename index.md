@@ -7,7 +7,7 @@ layout: default
 I am currently a Senior Research Scientist at Google DeepMind, working on Gemini Security and Privacy.
 
 Previously, I was a postdoc at Stanford CS advised by Tatsu Hashimoto, Percy Liang, and James Zou.
-I did my PhD at MIT, where I was advised by Prof. Aleksander Mądry.
+I did my PhD at MIT, where I was advised by Aleksander Mądry.
 For my SM thesis, I worked on statistical-computational tradeoffs in high-dimensional statistics with Guy Bresler.
 And where it all began: I studied Computer Science at Cornell, where I was fortunate to work with Ramin Zabih and Bobby Kleinberg.
 
