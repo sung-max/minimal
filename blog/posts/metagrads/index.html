@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="light"
-  data-auto-appearance="true"><head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en">
@@ -353,7 +353,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3300"
+    "wordCount": "3328"
   }]
   </script>
 
@@ -582,7 +582,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-02-16T00:00:00&#43;00:00">16 February 2026</time><span class="px-2 text-primary-500">&middot;</span><span>3300 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">16 mins</span>
+      <time datetime="2026-02-16T00:00:00&#43;00:00">16 February 2026</time><span class="px-2 text-primary-500">&middot;</span><span>3328 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">16 mins</span>
     
 
     
@@ -947,7 +947,7 @@ $$</p>
 Building on the findings of Engstrom et al., we confirm that specific hyperparameter choices&mdash;such as smaller learning rates, placing $\epsilon$ inside the square root of the Adam update denominator, using lower LayerNorm $\epsilon$ values, and parameter initialization (e.g., no bias parameters and $\mu$P)&mdash;significantly improve metasmoothness.</p>
 <figure style="text-align:center;">
   <img src="smoothness_interventions.png" alt="Interventions that improve metasmoothness in practice." style="display:block;margin:0 auto;width:70%;" />
-  <figcaption style="margin:0 auto;max-width:70%;text-align:left;"><strong>Simple interventions can dramatically improve metasmoothness.</strong> Note that the metagradients are computed "backwards" from the end of training. Our experiments show that removing bias parameters can significantly delay the explosion of metagradients.</figcaption>
+  <figcaption style="margin:0 auto;max-width:70%;text-align:left;"><strong>Simple interventions can dramatically improve metasmoothness.</strong> Note that the metagradients are computed "backwards" from the end of training, and in general tracing back closer to the start of training causes metagradients to explode in magnitude. As found in Engstrom et al., simple interventions such as removing bias parameters or changing the parameter initialization can significantly delay the explosion of metagradients.</figcaption>
 </figure>
 <p>Furthermore, we find that modern, standard architectural components like RMSNorm and Rotary Position Embeddings (RoPE) also help improve metasmoothness.</p>
 <p><strong>Science of data valuation</strong>. Our investigations thus far confirm two challenges to (statistically) meaningful data valuation: First, training is a stochastic process, and the ground-truth estimates can vary significantly between different runs, making it challenging and computationally expensive to assess the validity of any single estimate. Second, even the true influence function (as computed by the metagradient) is often unstable, particularly near the beginning of training; intuitively, this is because early in training any small perturbation can still cause the training to diverge to very different final “basins” of the loss. One valuable direction for future work would be a general analysis and prescription of when and how reliable attribution can be achieved given these factors.</p>
