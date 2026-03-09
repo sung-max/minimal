@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on </title>
+    <link>http://localhost:1313/blog/authors/</link>
+    <description>Recent content in Authors on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Sung Min Park, Tatsunori Hashimoto, Percy Liang, and James Zou</title>
+      <link>http://localhost:1313/blog/authors/sung-min-park-tatsunori-hashimoto-percy-liang-and-james-zou/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/authors/sung-min-park-tatsunori-hashimoto-percy-liang-and-james-zou/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sung Min Park (Based on Join Work With Tatsunori Hashimoto, Percy Liang, and James Zou)</title>
+      <link>http://localhost:1313/blog/authors/sung-min-park-based-on-join-work-with-tatsunori-hashimoto-percy-liang-and-james-zou/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/authors/sung-min-park-based-on-join-work-with-tatsunori-hashimoto-percy-liang-and-james-zou/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sung Min Park (Based on Joint Work With Tatsunori Hashimoto, Percy Liang, and James Zou)</title>
+      <link>http://localhost:1313/blog/authors/sung-min-park-based-on-joint-work-with-tatsunori-hashimoto-percy-liang-and-james-zou/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/authors/sung-min-park-based-on-joint-work-with-tatsunori-hashimoto-percy-liang-and-james-zou/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sung Min Park, Tatsunori Hashimoto, Percy Liang, James Zou</title>
+      <link>http://localhost:1313/blog/authors/sung-min-park-tatsunori-hashimoto-percy-liang-james-zou/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/authors/sung-min-park-tatsunori-hashimoto-percy-liang-james-zou/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

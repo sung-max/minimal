@@ -1,0 +1,1227 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>Data valuation for LLMs &middot; </title>
+    <meta name="title" content="Data valuation for LLMs &middot; ">
+  
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/blog/posts/metagrads/">
+  
+
+  
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/blog/posts/metagrads/">
+  <meta property="og:title" content="Data valuation for LLMs">
+  <meta property="og:description" content="Introduction # One of the most critical components of training a foundation model (e.g., an LLM) is the choice of the training data. A key challenge in designing the training data mix is estimating the value of a given data source.1 This challenge underlies questions such as:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-16T00:00:00+00:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Data valuation for LLMs">
+  <meta name="twitter:description" content="Introduction # One of the most critical components of training a foundation model (e.g., an LLM) is the choice of the training data. A key challenge in designing the training data mix is estimating the value of a given data source.1 This challenge underlies questions such as:">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/blog/css/main.bundle.min.f0cd420335206118b3d86a5b3a597ec2c5273f1de62eb9aa81e7049e7510f0faf005bdc29237911791f71206c4900b0b72fcc67cba72e87f56220a81a4743dd0.css"
+    integrity="sha512-8M1CAzUgYRiz2GpbOll&#43;wsUnPx3mLrmqgecEnnUQ8PrwBb3CkjeRF5H3EgbEkAsLcvzGfLpy6H9WIgqBpHQ90A==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/blog/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/blog/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/blog/js/main.bundle.min.afb52b12c6068572fd995a97b3c75c72492d8d746adda085755deef382cd0c29f51d176e8f9393b4179db042a72a81c1204421c2715a6b54cba63d5a809724f1.js"
+      integrity="sha512-r7UrEsYGhXL9mVqXs8dcckktjXRq3aCFdV3u84LNDCn1HRduj5OTtBedsEKnKoHBIEQhwnFaa1TLpj1agJck8Q=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/blog/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/blog/lib/katex/katex.min.d2ee85d2418f4d482ca2af2a3dad30d370b1c66133dea61f97d7933c92fc0cae10244f7f5cbd524a8897a1886f0d70ab04c0555ad680216b16a028354e42726c.css"
+    integrity="sha512-0u6F0kGPTUgsoq8qPa0w03CxxmEz3qYfl9eTPJL8DK4QJE9/XL1SSoiXoYhvDXCrBMBVWtaAIWsWoCg1TkJybA==">
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/blog/js/katex.bundle.30c179d64bdee5ed56cf63adf7227f13507841aa61a91a492e45b333d618bc901f2b196d2effcfe6716a23e01416a572441480d511b13320dba26d58e1246178.js"
+    integrity="sha512-MMF51kve5e1Wz2Ot9yJ/E1B4QaphqRpJLkWzM9YYvJAfKxltLv/P5nFqI&#43;AUFqVyRBSA1RGxMyDbom1Y4SRheA=="
+    id="katex-render"></script>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+    <link rel="manifest" href="/blog/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Data valuation for LLMs",
+    "headline": "Data valuation for LLMs",
+    
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/blog/posts/metagrads/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-02-16T00:00:00\u002b00:00",
+    "datePublished": "2026-02-16T00:00:00\u002b00:00",
+    
+    "dateModified": "2026-02-16T00:00:00\u002b00:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "3300"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral bf-scrollbar">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl bg-neutral/25 dark:bg-neutral-800/25"></div>
+  <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+    <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+  
+  
+    <a href="/blog/" class="text-base font-medium truncate min-w-0 shrink">
+      
+    </a>
+  
+  <div class="flex items-center ms-auto">
+    <div class="hidden md:flex">
+      <nav class="flex items-center gap-x-5 h-12">
+  
+
+  
+
+  
+
+  
+    <button
+      id="search-button"
+      aria-label="Search"
+      class="text-base bf-icon-color-hover"
+      title="Search (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <div class="flex items-center">
+      <button
+        id="appearance-switcher"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base bf-icon-color-hover">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    </div>
+  
+</nav>
+
+
+
+    </div>
+    <div class="flex md:hidden">
+      <div class="flex items-center h-14 gap-4">
+  
+    <button
+      id="search-button-mobile"
+      aria-label="Search"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="Search (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <button
+      id="appearance-switcher-mobile"
+      type="button"
+      aria-label="Dark mode switcher"
+      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
+      <div class="dark:hidden">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+      </div>
+      <div class="hidden dark:block">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+      </div>
+    </button>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="/blog/js/background-blur.min.605b3b942818f0ab5a717ae446135ec46b8ee5a2ad12ae56fb90dc2a76ce30c388f9fec8bcc18db15bd47e3fa8a09d779fa12aa9c184cf614a315bc72c6c163d.js"
+  integrity="sha512-YFs7lCgY8KtacXrkRhNexGuO5aKtEq5W&#43;5DcKnbOMMOI&#43;f7IvMGNsVvUfj&#43;ooJ13n6EqqcGEz2FKMVvHLGwWPQ=="
+  data-blur-id="menu-blur"></script>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Data valuation for LLMs
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2026-02-16T00:00:00&#43;00:00">16 February 2026</time><span class="px-2 text-primary-500">&middot;</span><span>3300 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">16 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+              <a href="/blog/authors/sung-min-park-tatsunori-hashimoto-percy-liang-and-james-zou/" class="relative">Sung Min Park, Tatsunori Hashimoto, Percy Liang, and James Zou</a>
+            
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+  
+
+  
+    
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#the-data-valuation-problem">The data valuation problem</a></li>
+    <li><a href="#background-a-tale-of-two-algorithms">Background: a tale of two algorithms</a></li>
+    <li><a href="#smoothness-when-are-metagradients-well-defined">Smoothness: when are metagradients well defined?</a>
+      <ul>
+        <li><a href="#metagradients-for-pre-training">Metagradients for pre-training</a></li>
+      </ul>
+    </li>
+    <li><a href="#results">Results</a>
+      <ul>
+        <li><a href="#pre-training">Pre-training</a></li>
+        <li><a href="#continued-pre-training">Continued pre-training</a></li>
+        <li><a href="#approximations-to-metagradients">Approximations to metagradients</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion-and-future-work">Conclusion and future work</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#the-data-valuation-problem">The data valuation problem</a></li>
+    <li><a href="#background-a-tale-of-two-algorithms">Background: a tale of two algorithms</a></li>
+    <li><a href="#smoothness-when-are-metagradients-well-defined">Smoothness: when are metagradients well defined?</a>
+      <ul>
+        <li><a href="#metagradients-for-pre-training">Metagradients for pre-training</a></li>
+      </ul>
+    </li>
+    <li><a href="#results">Results</a>
+      <ul>
+        <li><a href="#pre-training">Pre-training</a></li>
+        <li><a href="#continued-pre-training">Continued pre-training</a></li>
+        <li><a href="#approximations-to-metagradients">Approximations to metagradients</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion-and-future-work">Conclusion and future work</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+
+
+<h2 class="relative group">Introduction
+    <div id="introduction" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#introduction" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>One of the most critical components of training a foundation model (e.g., an LLM) is the choice of the training data.
+A key challenge in designing the training data mix is estimating the value of a given data source.<sup class="hovernote" tabindex="0" data-note="Example hover footnote: the value depends on how much the data improves downstream evaluation metrics.">1</sup>
+
+This challenge underlies questions such as:</p>
+<ul>
+<li><em>What are the values of different data sources w.r.t. core model capabilities?</em>&mdash;e.g., answering this can help ablate existing data sources or decide which new ones to incorporate into the next iteration of training.</li>
+<li><em>What was the counterfactual contribution of [some copyrighted work] on the model&rsquo;s generations? How much should the authors be compensated?</em> Note that these are already extremely relevant questions in practice&mdash;was Anthropic&rsquo;s settlement with authors reasonable (at least economically)? Is OpenAI paying too much or too little for its Reddit license?</li>
+</ul>
+
+<figure>
+        <img
+          class="my-0 rounded-md block mx-auto"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="1920"
+          height="864"
+          src="/blog/posts/metagrads/fg_data_valuation_hu_c0b284d712e8022.jpeg"
+          srcset="/blog/posts/metagrads/fg_data_valuation_hu_c0b284d712e8022.jpeg 800w,/blog/posts/metagrads/fg_data_valuation_hu_5ab26a134f2f54b5.jpeg 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/posts/metagrads/fg_data_valuation.jpeg"
+        />
+  
+  <figcaption>Data ablations can help us estimate value of data on model capabilities, but is intractable with many data sources.</figcaption>
+  </figure>
+<p>All of these questions reduce to a shared primitive&mdash;counterfactual estimation of how changes to the training data affect the final model.
+While researchers routinely conduct coarse data ablations and general insights are known (e.g., code contributes to general capability improvements beyond code <a href="https://arxiv.org/abs/2107.03374" target="_blank" rel="noopener" class="hovercite" data-cite="Chen et al. (2021). Evaluating Large Language Models Trained on Code.">[CTJ&#43;21]</a>), any analysis that is more fine-grained quickly becomes intractable.
+To illustrate: estimating the marginal (&ldquo;leave-one-out&rdquo;) contribution of 100 data sources would&mdash;without further approximations&mdash;require re-training 100 times in addition to the original run.
+As a result, one typically employs heuristics such as &ldquo;micro-annealing,&rdquo; but their fidelity remains unclear.</p>
+<p>At a high level, there are two distinct challenges to developing efficient methods for data valuation:</p>
+<ol>
+<li><strong>Efficient algorithms</strong>: Designing algorithms themselves has been quite tricky historically (e.g., methods based on Hessian-based influence functions abound in the literature but did not reliably work at all until 2023). On the flip side, as we&rsquo;ll see, it&rsquo;s remarkable that an efficient approximation is possible at all!</li>
+<li><strong>Reliable evaluation</strong>: Even setting the question of estimation aside, evaluating algorithms is non-trivial due to the fact that the ground-truth is extremely noisy and expensive to compute.</li>
+</ol>
+<p>We&rsquo;ll see some evidence of the latter, but primarily focus on the algorithmic aspect of the former.
+Fortunately, there&rsquo;s been a lot of amazing technical progress in the past few years and we now have tools to approximate data values efficiently.
+In this post, we will look at how to formalize the data valuation problem, some high level intuition for the two dominant approaches to this problem, and apply the <strong>metagradient</strong> approach to pre-training (small) LLMs.</p>
+
+<h2 class="relative group">The data valuation problem
+    <div id="the-data-valuation-problem" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#the-data-valuation-problem" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Let&rsquo;s formalize the general problem as follows:</p>
+<p>Consider some training corpus $\mathcal{D}$ (e.g., a text corpus scraped from the internet), some machine learning algorithm $\mathcal{A}$ (e.g., training a transformer with a specific set of hyperparameters) that maps a given dataset $S \subset \mathcal{D}$ to a trained model $\theta$, and some evaluation of interest $\ell$ that maps $\theta$ to a real value (e.g., eval on a benchmark).</p>
+<p>The general goal of data valuation (or attribution) is to efficiently estimate $\ell(\mathcal{A}(S)) =: f(S)$ given $S$.
+That is, we want to predict the model outputs as function of the training data alone <a href="https://arxiv.org/abs/2202.00622" target="_blank" rel="noopener" class="hovercite" data-cite="Ilyas, Park, Engstrom, Leclerc, and Madry (2022). Datamodels: Predicting Predictions from Training Data.">[IPE&#43;22]</a>.
+Often, we (locally) approximate $f$ as a <em>linear</em> function and are interested in estimating the <em>marginal or leave-one-out</em> data value of a datapoint $i \in S$:</p>
+<p>$$\nu_i := \mathbb{E}_\omega [f(S, \omega) - f(S \setminus \{i\}, \omega)],$$
+where the expectation is over randomness $\omega$ of the training algorithm (e.g., weight initialization, data order, and GPU non-determinism).</p>
+<p>In essence, this is a <em>counterfactual estimation</em> problem, and it is challenging as running an algorithm $\mathcal{A}$ in modern deep learning is extremely (computationally) expensive. How do we efficiently approximate such counterfactuals without re-training the model from scratch?</p>
+<p>Note: while understanding the role of randomness is an important issue, we ignore it for the remainder of this post to focus on the fixed-seed setting, dropping the seed term $\omega$ as it will stay fixed.
+In practice, this is achieved by using the same initialization, which naturally subsumes cases like continued pre-training or fine-tuning (which begins from some fixed checkpoint), provided the data order remains fixed.</p>
+
+<h2 class="relative group">Background: a tale of two algorithms
+    <div id="background-a-tale-of-two-algorithms" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#background-a-tale-of-two-algorithms" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>A long line of work on influence function approximation (originating from robust statistics <a href="https://doi.org/10.1002/0471725250" target="_blank" rel="noopener" class="hovercite" data-cite="Hampel, Ronchetti, Rousseeuw, and Stahel (1986). Robust Statistics: The Approach Based on Influence Functions.">[HRR&#43;86]</a>, <a href="https://doi.org/10.1214/aos/1176345513" target="_blank" rel="noopener" class="hovercite" data-cite="Pregibon (1981). Logistic Regression Diagnostics.">[P81]</a>, and introduced to machine learning by <a href="https://arxiv.org/abs/1703.04730" target="_blank" rel="noopener" class="hovercite" data-cite="Koh and Liang (2017). Understanding Black-box Predictions via Influence Functions.">[KL17]</a>) followed by more recent machine learning research on data attribution <a href="https://arxiv.org/abs/2212.04612" target="_blank" rel="noopener" class="hovercite" data-cite="Hammoudeh and Lowd (2022). Training Data Influence Analysis and Estimation: A Survey.">[HL22]</a> aim to develop efficient and reliable approximations of $f$ (typically by estimating the marginal data values $\nu_i$).</p>
+<p>Despite the incredible variety of approaches, they all essentially aim to replace
+the above re-sampling estimator with its local approximation.
+To do this, we generalize the definition of $f$ (and our learning algorithm) to operate over continuous weights, e.g. $f$ now takes input in $\mathbb{R}^{|\mathcal{D}|}$.</p>
+<p>Then, we approximate the marginal data value relative to train set $S$ as the derivative:
+$$
+\nu_i \approx \lim_{\epsilon \rightarrow 0} \frac{f(\mathbb{1}_S + \epsilon e_i) - f(\mathbb{1}_S)}{\epsilon}
+$$
+where we upweight the i-th example by $\epsilon$ and $e_i$ denotes the i-th basis vector.</p>
+<p>At a high level, there are two kinds of approaches to approximate the above derivative: we&rsquo;ll refer to these as &ldquo;implicit&rdquo; vs &ldquo;explicit&rdquo; differentiation methods.</p>
+<p><strong>Implicit</strong> differentiation methods (the most prominent being the influence function) characterize the final model as a local minimum to an empirical risk minimization problem, and use a Taylor approximation to estimate how perturbing the data weights affects this minimum.
+Notably, these methods typically only probe the final checkpoint and do not require re-training or knowing <em>how</em> we got to the optimum.</p>
+<p><strong>Explicit</strong> differentiation methods, on the other hand, consider the <em>entire</em> trajectory of iterative optimization (e.g., the iterates taken by SGD or Adam), and explicitly differentiate through the entire computational trajectory to compute the exact gradient, i.e.,</p>
+<p>$$
+\nu_i \approx \left. \frac{\partial f(w)}{\partial w_i} \right|_{w = \mathbb{1}_S}
+$$</p>
+<p>The key insight is that typically in modern deep learning, the entire sequence of operations taken by $\mathcal{A}$ is&mdash;however complex&mdash;some differentiable function of the data weights $w$, so one can “just differentiate” through the entire learning algorithm using standard autograd libraries.
+Computing this derivative can be extremely expensive if one&rsquo;s not careful, but the object is nonetheless faithful to the actual optimization trajectory.</p>
+<p>These methods have a long history in meta learning, hyperparameter optimization, and even fields like PDEs (where it is better known as the &ldquo;adjoint&rdquo; method; e.g., to analyze the sensitivity of a PDE to initial conditions).
+More recently, the metagradient method <a href="https://arxiv.org/abs/2503.13751" target="_blank" rel="noopener" class="hovercite" data-cite="Engstrom, Ilyas, Chen, Feldmann, Moses, and Madry (2025). Optimizing ML Training with Metagradient Descent.">[EIC&#43;25]</a> takes this approach and demonstrated its effectiveness across various large scale models and even settings beyond data attribution.</p>
+<p>In the rest of this post, we will apply the metagradient approach to language model training to tackle the problem of approximating marginal data values.</p>
+
+<h2 class="relative group">Smoothness: when are metagradients well defined?
+    <div id="smoothness-when-are-metagradients-well-defined" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#smoothness-when-are-metagradients-well-defined" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>If we can differentiate through everything, isn&rsquo;t the influence estimation problem solved? Not quite&mdash;the metagradient is an extremely ill-behaved object in general.
+In fact, for standard settings, if you compute it, you will just get NaNs due to gradients blowing up.</p>
+<p>One intuitive way to see why this is the case is as follows: suppose during training you are at a saddle point, and there are two potential &ldquo;basins&rdquo; A and B the trajectory can converge to. An infinitesimally small perturbation can determine whether the optimization descends into A or B&mdash;basins that are a finite distance apart in parameter space. The derivative is thus effectively infinite.<sup class="hovernote" tabindex="0" data-note="Technically, this is due to the way that metagradient is typically decomposed as an inner product of i) the parameter gradient w.r.t. data weights with ii) the output gradient w.r.t. parameters; while the former is infinite, it is possible that there is some way to &#34;bypass&#34; this.">2</sup>
+ So if you imagine that earlier in training, the optimization is exploring many potential &ldquo;basins&rdquo;, it&rsquo;s no surprise that metagradient is infinite w.r.t. to that trajectory (and many alternative ones).</p>
+<figure class="block mx-auto">
+  <img src="saddle_point.png" alt="Optimization near a saddle point." style="display: block; width: 60%; height: auto; margin-left: auto; margin-right: auto;">
+  <figcaption><strong>Optimization near a saddle point</strong>. The initial gradient descent trajectory (green) can take us down either side of the red curve.  </figcaption>
+</figure>
+<p>Indeed, one can see that a <em>single</em> data perturbation early in training can cause the trajectory of weights to completely diverge. In the experiment below, we examine the sensitivity of pre-training a GPT-2 model with a fixed data order. Across different runs, we introduce a perturbation by zeroing out the gradient of a single example in a batch at different points in time, tracking the evolution of the cosine similarity of one of the weight matrices throughout training.
+Notably, any perturbation before halfway into training causes significant divergence in weight space (&lt; 0.7 cosine similarity).
+<sup class="hovernote" tabindex="0" data-note="A priori one might guess that such a deviation in parameter space may still not induce variance in the final evals, but it turns out to be the case. In other words, a single perturbation can rapidly induce &#34;mixing&#34; the space of outcomes.">3</sup>
+</p>
+<figure class="block mx-auto">
+  <img src="data_sensitivity.png" alt="Metagradient sensitivity in training dynamics." style="display: block; width: 70%; height: auto; margin-left: auto; margin-right: auto;">
+  <figcaption><strong>Sensitivity of training dynamics to data perturbations.</strong> x-axis indicates the training iteration; the y-axis indicates cosine similarity of one of the transformer weights between unperturbed and perturbed runs; the label indicates the time (as fraction of full training) at which a perturbation is first introduced.</figcaption>
+</figure>
+<p>So when do we expect metagradients to be useful?
+Intuitively, we want the local landscape to look approximately linear in the data perturbations.
+Engstrom et al. characterize this intuition more rigorously using a metric called <strong>metasmoothness</strong>.
+While the metasmoothness is very low for standard training hyperparameters and architectures, the authors find that
+in many standard settings you can tweak hyperparameters a little bit to find configurations that have much higher smoothness.
+(However, this gain typically comes at a small cost in loss, and it is an open question to understand the exact tradeoffs between smoothness and loss.)</p>
+
+<h3 class="relative group">Metagradients for pre-training
+    <div id="metagradients-for-pre-training" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#metagradients-for-pre-training" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>We focus on pre-training as it is arguably the most interesting setting to study this algorithm:</p>
+<ul>
+<li>Because modern pre-training operates in a heavily undertrained regime (~one epoch over the data), it clearly departs from the assumptions of the implicit differentiation approach (which assumes a well-converged local minimum) and demands using the precision of an explicit approach.</li>
+<li>Pre-training takes much longer than fine-tuning and is a good testbed to test the limits of metagradients over extremely long horizons, and have not been studied in prior work.</li>
+<li>Pre-training consumes by far the most amount of raw data; hence, understanding the value of data is particularly important for i) optimizing pre-training data mix, but also ii) giving us a tool to precisely quantify the value of data (e.g., for data pricing, as we motivated in the introduction).</li>
+</ul>
+
+<h2 class="relative group">Results
+    <div id="results" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#results" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>We first look at pre-training (training from scratch) a modified GPT-2 style transformer.</p>
+
+<h3 class="relative group">Pre-training
+    <div id="pre-training" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#pre-training" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p><strong>Setup.</strong> We train a 124M parameter transformer<sup class="hovernote" tabindex="0" data-note="Using standard parameters, e.g., 12 layers, hidden dim 768, etc.; we use context length of 128">4</sup>
+  on 1.6B tokens of text data sampled from RedPajamaV2 <a href="https://arxiv.org/abs/2411.12372" target="_blank" rel="noopener" class="hovercite" data-cite="Weber et al. (2024). RedPajama: an Open Dataset for Training Large Language Models.">[W&#43;24]</a>. Since the training corpus consists of a vast number of domains, we isolate the top 20 domains by token count and estimate their data values. (The value of a data source such as a domain is naturally the sum of the values of its constituent documents.) As a target metric for data values, we use the LAMBADA task, a standard benchmark for long range understanding.</p>
+<p>We compute both an estimate of the <em>ground-truth</em> data value by re-training models on the corresponding counterfactual training sets (i.e., after removing the $i$-th data source) as well as our approximation to it based on the metagradient algorithm.</p>
+<p>$$
+\text{(ground-truth)}\;\; \nu_i = f(S) - f(S \setminus \{i\})
+$$
+$$
+\text{(metagradient approx.)}\;\; \nu_i \approx \frac{\partial f(w)}{\partial w_i}
+$$</p>
+<p>To keep our analysis in the metasmooth regime, we hold fixed the first 8% of training (using identical data and data ordering across all runs) and compute counterfactuals and metagradients only over the remaining 92%.<sup class="hovernote" tabindex="0" data-note="In particular, this means that we stop the metagradient computation, which starts from the end of training, once it reaches the 8% iteration.">5</sup>
+</p>
+<p>(We hypothesize that marginal data differences only manifest past the initial phase of training, as early in training the learning dynamics focus more on, e.g., memorizing frequent n-grams <a href="https://arxiv.org/abs/2308.15419" target="_blank" rel="noopener" class="hovercite" data-cite="Chang, Tu, and Bergen (2023). Characterizing Learning Curves During Language Model Pre-Training: Learning, Forgetting, and Stability.">[CTB23]</a>, but this remains to be verified.)</p>
+<p><strong>Findings.</strong> As the domains vary substantially in their size, we analyze their <em>token normalized</em> data values (i.e., adjusted by their relative token count). We find that we can approximate ground-truth data values accurately (rank correlations of $r \approx 0.85$); see Figure 1. While re-training the model separately for each of hundreds or thousands of domains would be computationally infeasible, our approach allows one to estimate many such counterfactuals simultaneously using only $\sim$3x the compute of the original model training. In fact, while we aggregate and perform analysis at the level of individual domains, we obtain estimates for marginal data values at the <em>document level</em>.</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="1962"
+          height="2000"
+          src="/blog/posts/metagrads/lambada_hu_75b48528f8be06d8.png"
+          srcset="/blog/posts/metagrads/lambada_hu_75b48528f8be06d8.png 800w,/blog/posts/metagrads/lambada_hu_392bcfcaa75564b9.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/posts/metagrads/lambada.png"
+        />
+  
+  <figcaption>Data values of different domains for pre-training GPT-2 (124M) on 1.6B tokens.</figcaption>
+  </figure>
+<p>Among the top domains analyzed, <code>scribd</code>, <code>theatlantic</code>, and <code>goodreads</code> have the largest relative data values. In a separate analysis, we found that some less common domains such as <code>aparchive</code> (not shown in Figure) have remarkably higher normalized data values than these top domains, suggesting that future data curation may benefit from a more fine-grained analysis of each domain&rsquo;s contribution that goes beyond simple heuristics such as size or hand-crafted notions of data quality.</p>
+<p><strong>Smoothness interventions on hyperparameters and architecture</strong>.
+Building on the findings of Engstrom et al., we confirm that specific hyperparameter choices&mdash;such as smaller learning rates, placing $\epsilon$ inside the square root of the Adam update denominator, using lower LayerNorm $\epsilon$ values, and parameter initialization (e.g., no bias parameters and $\mu$P)&mdash;significantly improve metasmoothness.</p>
+<figure style="text-align:center;">
+  <img src="smoothness_interventions.png" alt="Interventions that improve metasmoothness in practice." style="display:block;margin:0 auto;width:70%;" />
+  <figcaption style="margin:0 auto;max-width:70%;text-align:left;"><strong>Simple interventions can dramatically improve metasmoothness.</strong> Note that the metagradients are computed "backwards" from the end of training. Our experiments show that removing bias parameters can significantly delay the explosion of metagradients.</figcaption>
+</figure>
+<p>Furthermore, we find that modern, standard architectural components like RMSNorm and Rotary Position Embeddings (RoPE) also help improve metasmoothness.</p>
+<p><strong>Science of data valuation</strong>. Our investigations thus far confirm two challenges to (statistically) meaningful data valuation: First, training is a stochastic process, and the ground-truth estimates can vary significantly between different runs, making it challenging and computationally expensive to assess the validity of any single estimate. Second, even the true influence function (as computed by the metagradient) is often unstable, particularly near the beginning of training; intuitively, this is because early in training any small perturbation can still cause the training to diverge to very different final “basins” of the loss. One valuable direction for future work would be a general analysis and prescription of when and how reliable attribution can be achieved given these factors.</p>
+
+<h3 class="relative group">Continued pre-training
+    <div id="continued-pre-training" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#continued-pre-training" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>To complement the above results on pre-training and to replicate similar results from the original paper, we now investigate continued pre-training (which one could view as a fine-tuning regime).</p>
+<p><strong>Setup.</strong> We take a pre-trained 124M model (same architecture), this time already fine-tuned on 3.2B tokens of text data from FineWebEdu. Subsequently, we fine-tune this model on 20 uniformly weighted data sources from the Common Pile corpus. We then evaluate the fine-tuned model on Paloma-subreddits, a standard perplexity evaluation benchmark based on a collection of reddit posts; one may view this as a proxy for the model&rsquo;s ability to engage on conversations as they typically occur on these sites.</p>
+<p><strong>Findings.</strong> Similar to pre-training, we find that we can accurately estimate the true marginal data value of data sources using our approximations (Figure 2).</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="1957"
+          height="2000"
+          src="/blog/posts/metagrads/cpt_hu_4b99eec3b95fdd6.png"
+          srcset="/blog/posts/metagrads/cpt_hu_4b99eec3b95fdd6.png 800w,/blog/posts/metagrads/cpt_hu_6f481ee63047c1eb.png 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/posts/metagrads/cpt.png"
+        />
+  
+  <figcaption>Data values of different domains for fine-tuning GPT-2 (124M) on 100M tokens from the Common Pile.</figcaption>
+  </figure>
+
+<h3 class="relative group">Approximations to metagradients
+    <div id="approximations-to-metagradients" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#approximations-to-metagradients" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>One natural question is to what extent it&rsquo;s necessary to compute the &ldquo;full&rdquo; metagradient. Is it possible that we can approximate it by only looking at, for example, &ldquo;suffix&rdquo; or tail end of the trajectory?
+(This would also lend more credibility to the usual heuristic of using &ldquo;microannealing&rdquo; or &ldquo;tail patching&rdquo;.)
+Unfortunately, the following analysis indicates that this is not the case:</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md block mx-auto"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
+          alt=""
+          width="1160"
+          height="616"
+          src="/blog/posts/metagrads/tail_metagrads_v2_hu_a5f382ef57118ac5.jpg"
+          srcset="/blog/posts/metagrads/tail_metagrads_v2_hu_a5f382ef57118ac5.jpg 800w,/blog/posts/metagrads/tail_metagrads_v2_hu_977bd8dcdef4a116.jpg 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="/blog/posts/metagrads/tail_metagrads_v2.jpg"
+        />
+  
+  <figcaption><strong>Approximating metagradients via suffix of training trajectories</strong>. Our goal is to approximate the full counterfactual from iteration 1000 to 4000 by using partial sums of the corresponding metagradients.</figcaption>
+  </figure>
+<p>In this experiment, we took the partial sums of the metagradient scores (recall that we have this for every document / example) corresponding to different suffixes of training. Specifically, we approximate the marginal value of a data source by summing up the metagradient estimates for all the documents belonging to a particular suffix of the trajectory.
+We can observe that the predictability degrades quickly as the included trajectory gets shorter.</p>
+
+<h2 class="relative group">Conclusion and future work
+    <div id="conclusion-and-future-work" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#conclusion-and-future-work" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>These results demonstrate that fine-grained approximations to data values in pre-training can be tractable and effective. Prior work focuses mostly on large data counterfactuals (e.g., less than ten data sources analyzed) or on a different regime of training (mostly fine-tuning). One exception is TrackStar <a href="https://arxiv.org/abs/2410.17413" target="_blank" rel="noopener" class="hovercite" data-cite="Chang, Rajagopal, Bolukbasi, Dixon, and Tenney (2024). Scalable Influence and Fact Tracing for Large Language Model Pretraining.">[CRB&#43;24]</a>, which shows that using a well designed implicit differentiation method can scale to pre-training; however, it focuses on attributing individual model outputs rather than aggregate metrics.</p>
+<p>To conclude, we share some thoughts on directions for future work:</p>
+<ul>
+<li><strong>Stronger baselines and new algorithms.</strong> Better understanding the effectiveness (and failure modes) of baselines such as micro-annealing would be practically extremely valuable. Algorithmically, we are perhaps just getting started as it is only in the past few years that we first have scalable, predictive methods.
+<ul>
+<li>The two (and perhaps the only effective) algorithms are based on implicit and explicit differentiation. Is there a way to combine the benefits of both approaches to yield a stronger algorithm?  There is some nice initial work in this direction, e.g., <a href="https://arxiv.org/abs/2405.12186" target="_blank" rel="noopener" class="hovercite" data-cite="Bae, Lin, Lorraine, and Grosse (2024). Training Data Attribution via Approximate Unrolled Differentiation.">[BLL&#43;24]</a>.</li>
+<li>Developing better algorithms will also require a deeper understanding of the nature of randomness and learning dynamics of neural networks and how they interact with marginal data values. (E.g., as we remarked before, earlier in training might be extremely unsmooth in terms of optimization dynamics but perhaps inconsequential for purposes of data valuation when marginalized over randomness.)</li>
+</ul>
+</li>
+<li><strong>Scaling of data values</strong>. It is common practice to perform data ablations at a much smaller scale and then extrapolate to the relevant scale.
+What are the right adjustments and functional forms needed to extrapolate accurately?
+<ul>
+<li>If it turns out there are accurate scaling laws, we might be able to do away with simpler (but more expensive) approaches like regression done at smaller scale (e.g., using tiny swarm-based models in Olmix <a href="https://arxiv.org/abs/2602.12237" target="_blank" rel="noopener" class="hovercite" data-cite="Chen, Murray, Heineman, Jordan, Hajishirzi, Ré, Soldaini, and Lo (2025). Olmix: A Framework for Data Mixing Throughout LM Development.">[CMH&#43;25]</a>) rather than using influence approximations (which can be done at larger scale but are more sensitive to hyperparameters).</li>
+<li>There is some nice initial work in this direction, e.g., <a href="https://arxiv.org/abs/2405.20456" target="_blank" rel="noopener" class="hovercite" data-cite="Covert, Ji, Hashimoto, and Zou (2024). Scaling Laws for the Value of Individual Data Points in Machine Learning.">[CJH&#43;24]</a> and <a href="https://arxiv.org/abs/2507.22250" target="_blank" rel="noopener" class="hovercite" data-cite="Ostapenko et al. (2025). Using Scaling Laws for Data Source Utility Estimation in Domain-Specific Pre-Training.">[OGK&#43;25]</a>, though the former only looks at the scaling along data scale (whereas we need to look at scaling in both model size and data) while latter is based on the premise that micro-annealing is a good approximation to the true counterfactuals.</li>
+</ul>
+</li>
+<li><strong>Science of data quality</strong>. What approaches like metagradient make feasible for the first time is
+(efficiently) performing &ldquo;thousands of ablations at once&rdquo;. With this data now available (or easy to compute), further analysis can guide practitioners (e.g., those looking to acquire data to improve models), data creators (e.g., those looking to get compensated for their data), and policy makers (e.g., determining the significance of data sources in context of copyrights). Alternatively, the data from these hypothetical ablations may be used to train better cheap fast data quality estimators (e.g., fasttext classifiers as used in DCLM).</li>
+<li><strong>Beyond linear estimators</strong>. Almost all work in this area is based on local linear approximations to data. An important open question is understanding&mdash;both theoretically and empirically&mdash;when non-linear effects manifest and how to predict them (e.g., when two data sources are individually helpful but together detrimental).
+<ul>
+<li>One common way to deal with the non-linearity is to iteratively compute metagradient and run gradient descent in &ldquo;data weight space&rdquo; <a href="https://arxiv.org/abs/2503.13751" target="_blank" rel="noopener" class="hovercite" data-cite="Engstrom, Ilyas, Chen, Feldmann, Moses, and Madry (2025). Optimizing ML Training with Metagradient Descent.">[EIC&#43;25]</a>. While simple and elegant, this approach is extremely expensive, and we suspect there are other ways to correct for the non-linearity.</li>
+</ul>
+</li>
+<li><strong>Data valuation for RL</strong>. A significant component of the modern LLM pipeline is RL during post-training. Extending existing approaches for data valuation to this regime is tricky, however, as the data (e.g., the model&rsquo;s attempted solution) is generated online by the model itself. We think that a lot of creative approaches are possible here.</li>
+</ul>
+
+<h2 class="relative group">Code
+    <div id="code" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#code" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Coming soon!</p>
+
+<h2 class="relative group">Acknowledgements
+    <div id="acknowledgements" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#acknowledgements" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>SP would like to thank the Stanford HAI Hoffman-Yee grant for funding his postdoc,
+the Stanford Marin team for the infra support (special thanks to David Hall, Ahmed Ahmed, and Suhas Kotha),
+Google TRC and Stanford NLP for compute,
+Andrew Ilyas and Logan Engstrom for an initial codebase for metagradients to jump start the project as well as various tips and discussions,
+Marcel Rod and Tatsu Hashimoto for a nice re-implementation of metagradients,
+Sally Zhu for some analyses and experiments on metagradients (not discussed here), and finally various members of p-lambda and the Hashimoto labs for useful discussions.</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/blog/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_posts/metagrads/index.md"
+          data-oid-likes="likes_posts/metagrads/index.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/blog/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/blog/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

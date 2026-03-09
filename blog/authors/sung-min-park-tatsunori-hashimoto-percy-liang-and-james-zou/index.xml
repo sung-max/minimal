@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sung Min Park, Tatsunori Hashimoto, Percy Liang, and James Zou on </title>
+    <link>http://localhost:1313/blog/authors/sung-min-park-tatsunori-hashimoto-percy-liang-and-james-zou/</link>
+    <description>Recent content in Sung Min Park, Tatsunori Hashimoto, Percy Liang, and James Zou on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/authors/sung-min-park-tatsunori-hashimoto-percy-liang-and-james-zou/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Data valuation for LLMs</title>
+      <link>http://localhost:1313/blog/posts/metagrads/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/posts/metagrads/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Introduction&#xA;    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;One of the core components of building foundation models(LLMs) is designing the training data.&#xA;A key challenge is estimating the value of a given data source. &lt;sup class=&#34;hovernote&#34; tabindex=&#34;0&#34; data-note=&#34;Example hover footnote: the value depends on how much the data improves downstream evaluation metrics.&#34;&gt;1&lt;/sup&gt;&#xA;&#xA;Examples of questions include:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;What are the values of different data sources &lt;sup class=&#34;hovernote&#34; tabindex=&#34;0&#34; data-note=&#34;A data source could be a dataset, a web domain, or even a single document.&#34;&gt;2&lt;/sup&gt;&#xA; w.r.t to core model capabilities?&lt;/em&gt; This could be in an attempt to ablate existing data sources, or to decide which new ones to incorporate.&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;What was the counterfactual contribution of [some copyrighted work] on the model&amp;rsquo;s generations? How much should the authors be compensated?&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;figure&gt;&#xA;        &lt;img&#xA;          class=&#34;my-0 rounded-md block mx-auto&#34;&#xA;          loading=&#34;lazy&#34;&#xA;          decoding=&#34;async&#34;&#xA;          fetchpriority=&#34;auto&#34;&#xA;          alt=&#34;&#34;&#xA;          width=&#34;1920&#34;&#xA;          height=&#34;864&#34;&#xA;          src=&#34;http://localhost:1313/blog/posts/metagrads/fg_data_valuation_hu_c0b284d712e8022.jpeg&#34;&#xA;          srcset=&#34;http://localhost:1313/blog/posts/metagrads/fg_data_valuation_hu_c0b284d712e8022.jpeg 800w,/blog/posts/metagrads/fg_data_valuation_hu_5ab26a134f2f54b5.jpeg 1280w&#34;&#xA;          sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;&#xA;          data-zoom-src=&#34;http://localhost:1313/blog/posts/metagrads/fg_data_valuation.jpeg&#34;&#xA;        /&gt;&#xA;  &#xA;  &lt;figcaption&gt;Data valuation questions and counterfactuals.&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;p&gt;The common underlying  primitive needed to answer these questions is the ability to estimate the &lt;em&gt;counterfactual&lt;/em&gt; effect of interventions on the training data on some downstream eval.&#xA;While researchers routinely conduct coarse data ablations (e.g., we know that code contributes to general capability improvements CITE), anything that is more fine-grained quickly becomes intractable.&#xA;For instance, estimating the marginal (&amp;ldquo;leave-one-out&amp;rdquo;) contribution of 100 data sources would&amp;mdash;without further approximations&amp;mdash;require re-training 100 times.&#xA;As a result, one typically employs heuristics such as &amp;ldquo;micro-annealing,&amp;rdquo; but their fidelity remains unclear (CITE).&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
