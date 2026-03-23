@@ -15,8 +15,8 @@
 
   
   
-    <title>Data valuation for LLMs &middot; </title>
-    <meta name="title" content="Data valuation for LLMs &middot; ">
+    <title>Data valuation for LLMs via Metagradients &middot; </title>
+    <meta name="title" content="Data valuation for LLMs via Metagradients &middot; ">
   
 
   
@@ -33,8 +33,8 @@
 
   
   <meta property="og:url" content="http://localhost:1313/blog/posts/metagrads/">
-  <meta property="og:title" content="Data valuation for LLMs">
-  <meta property="og:description" content="Introduction # One of the most critical components of training a foundation model (e.g., an LLM) is the choice of the training data. A key challenge in designing the training data mix is estimating the value of a given data source.1 This challenge underlies questions such as:">
+  <meta property="og:title" content="Data valuation for LLMs via Metagradients">
+  <meta property="og:description" content="Introduction # One of the most critical components of training a foundation model (e.g., an LLM) is the choice of the training data. A key challenge in designing the training data mix is estimating the value of different data,1 and this often comes up in questions such as:">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -43,8 +43,8 @@
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Data valuation for LLMs">
-  <meta name="twitter:description" content="Introduction # One of the most critical components of training a foundation model (e.g., an LLM) is the choice of the training data. A key challenge in designing the training data mix is estimating the value of a given data source.1 This challenge underlies questions such as:">
+  <meta name="twitter:title" content="Data valuation for LLMs via Metagradients">
+  <meta name="twitter:description" content="Introduction # One of the most critical components of training a foundation model (e.g., an LLM) is the choice of the training data. A key challenge in designing the training data mix is estimating the value of different data,1 and this often comes up in questions such as:">
 
   
   
@@ -335,8 +335,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Data valuation for LLMs",
-    "headline": "Data valuation for LLMs",
+    "name": "Data valuation for LLMs via Metagradients",
+    "headline": "Data valuation for LLMs via Metagradients",
     
     "inLanguage": "en",
     "url" : "http://localhost:1313/blog/posts/metagrads/",
@@ -353,7 +353,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3328"
+    "wordCount": "3510"
   }]
   </script>
 
@@ -530,7 +530,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Data valuation for LLMs
+        Data valuation for LLMs via Metagradients
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -582,7 +582,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-02-16T00:00:00&#43;00:00">16 February 2026</time><span class="px-2 text-primary-500">&middot;</span><span>3328 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">16 mins</span>
+      <time datetime="2026-02-16T00:00:00&#43;00:00">16 February 2026</time><span class="px-2 text-primary-500">&middot;</span><span>3510 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span>
     
 
     
@@ -754,13 +754,16 @@
     
 </h2>
 <p>One of the most critical components of training a foundation model (e.g., an LLM) is the choice of the training data.
-A key challenge in designing the training data mix is estimating the value of a given data source.<sup class="hovernote" tabindex="0" data-note="Example hover footnote: the value depends on how much the data improves downstream evaluation metrics.">1</sup>
+A key challenge in designing the training data mix is estimating the value of different data,<sup class="hovernote" tabindex="0" data-note="Example hover footnote: the value depends on how much the data improves downstream evaluation metrics.">1</sup>
 
-This challenge underlies questions such as:</p>
+and this often comes up in questions such as:</p>
 <ul>
-<li><em>What are the values of different data sources w.r.t. core model capabilities?</em>&mdash;e.g., answering this can help ablate existing data sources or decide which new ones to incorporate into the next iteration of training.</li>
-<li><em>What was the counterfactual contribution of [some copyrighted work] on the model&rsquo;s generations? How much should the authors be compensated?</em> Note that these are already extremely relevant questions in practice&mdash;was Anthropic&rsquo;s settlement with authors reasonable (at least economically)? Is OpenAI paying too much or too little for its Reddit license?</li>
+<li><em>What are the values of different data sources w.r.t. core model capabilities?</em></li>
+<li><em>Which new data source(s) caused a regression on the latest pre/post-training run?</em></li>
+<li><em>What was the counterfactual contribution of [some copyrighted work] on the model&rsquo;s generations?</em></li>
 </ul>
+<p>On one hand, answering these questions provides not only scientific value to the understanding of how data influences model behavior, but also enables researchers to efficiently ablate data mixes, providing significant savings in compute.
+On the other hand, these questions have implications beyond the model development&mdash;was Anthropic&rsquo;s settlement with authors fair or should they have been compensated more? Is OpenAI paying too much or too little for its Reddit license?</p>
 
 <figure>
         <img
@@ -777,20 +780,21 @@ This challenge underlies questions such as:</p>
           data-zoom-src="/blog/posts/metagrads/fg_data_valuation.jpeg"
         />
   
-  <figcaption>Data ablations can help us estimate value of data on model capabilities, but is intractable with many data sources.</figcaption>
+  <figcaption><strong>Figure 1</strong>. (Illustrative) Data ablations can help us estimate value of data on model capabilities, but is intractable with many data sources.</figcaption>
   </figure>
-<p>All of these questions reduce to a shared primitive&mdash;counterfactual estimation of how changes to the training data affect the final model.
-While researchers routinely conduct coarse data ablations and general insights are known (e.g., code contributes to general capability improvements beyond code <a href="https://arxiv.org/abs/2107.03374" target="_blank" rel="noopener" class="hovercite" data-cite="Chen et al. (2021). Evaluating Large Language Models Trained on Code.">[CTJ&#43;21]</a>), any analysis that is more fine-grained quickly becomes intractable.
+<p>All of these questions reduce to a shared primitive&mdash;estimating how much the inclusion (or exclusion) of a subset of data influences the final model.
+While we do not tackle these applied questions directly in this post, we focus on developing and validating the underlying algorithmic machinery that would make answering them feasible.</p>
+<p>While researchers routinely conduct coarse data ablations and general insights are known in the community (e.g., code contributes to general capability improvements beyond code <a href="https://arxiv.org/abs/2107.03374" target="_blank" rel="noopener" class="hovercite" data-cite="Chen et al. (2021). Evaluating Large Language Models Trained on Code.">[CTJ&#43;21]</a>), any analysis that is more fine-grained quickly becomes intractable.
 To illustrate: estimating the marginal (&ldquo;leave-one-out&rdquo;) contribution of 100 data sources would&mdash;without further approximations&mdash;require re-training 100 times in addition to the original run.
 As a result, one typically employs heuristics such as &ldquo;micro-annealing,&rdquo; but their fidelity remains unclear.</p>
 <p>At a high level, there are two distinct challenges to developing efficient methods for data valuation:</p>
 <ol>
-<li><strong>Efficient algorithms</strong>: Designing algorithms themselves has been quite tricky historically (e.g., methods based on Hessian-based influence functions abound in the literature but did not reliably work at all until 2023). On the flip side, as we&rsquo;ll see, it&rsquo;s remarkable that an efficient approximation is possible at all!</li>
+<li><strong>Efficient algorithms</strong>: Designing algorithms themselves has been quite tricky historically (e.g., methods based on Hessian-based influence functions abound in the literature but did not reliably work at all until recently <a href="https://arxiv.org/abs/2308.03296" target="_blank" rel="noopener" class="hovercite" data-cite="Grosse, Bae, Anil, Elhage, Tamkin, Tajdini, Steiner, Li, Durmus, Perez, Hubinger, Lukošiūtė, Nguyen, Joseph, McCandlish, Kaplan, and Bowman (2023). Studying Large Language Model Generalization with Influence Functions.">[GBA&#43;23]</a>, <a href="https://arxiv.org/abs/2303.14186" target="_blank" rel="noopener" class="hovercite" data-cite="Park, Georgiev, Ilyas, Leclerc, and Madry (2023). TRAK: Attributing Model Behavior at Scale.">[PGI&#43;23]</a>). On the flip side, it&rsquo;s remarkable that an efficient approximation is possible at all!</li>
 <li><strong>Reliable evaluation</strong>: Even setting the question of estimation aside, evaluating algorithms is non-trivial due to the fact that the ground-truth is extremely noisy and expensive to compute.</li>
 </ol>
 <p>We&rsquo;ll see some evidence of the latter, but primarily focus on the algorithmic aspect of the former.
-Fortunately, there&rsquo;s been a lot of amazing technical progress in the past few years and we now have tools to approximate data values efficiently.
-In this post, we will look at how to formalize the data valuation problem, some high level intuition for the two dominant approaches to this problem, and apply the <strong>metagradient</strong> approach to pre-training (small) LLMs.</p>
+Fortunately, there&rsquo;s been a lot of amazing technical progress in the past few years and we now have algorithmic tools to approximate data values efficiently.
+In this post, we will look at how to formalize the data valuation problem, some high-level intuition for the two dominant approaches to this problem, and apply the recent <strong>metagradient</strong> approach <a href="https://arxiv.org/abs/2503.13751" target="_blank" rel="noopener" class="hovercite" data-cite="Engstrom, Ilyas, Chen, Feldmann, Moses, and Madry (2025). Optimizing ML Training with Metagradient Descent.">[EIC&#43;25]</a> to pre-training (small) LLMs.</p>
 
 <h2 class="relative group">The data valuation problem
     <div id="the-data-valuation-problem" class="anchor"></div>
@@ -801,15 +805,16 @@ In this post, we will look at how to formalize the data valuation problem, some 
     </span>
     
 </h2>
+<p>In plain terms, the data valuation problem asks: if we were to add or remove a particular data source from our training set, how much would the final model&rsquo;s performance change <a href="https://proceedings.mlr.press/v97/ghorbani19c.html" target="_blank" rel="noopener" class="hovercite" data-cite="Ghorbani and Zou (2019). Data Shapley: Equitable Valuation of Data for Machine Learning.">[GZ19]</a>? The challenge is that naively answering this requires re-training the model for every data source we want to evaluate, which is prohibitively expensive.</p>
 <p>Let&rsquo;s formalize the general problem as follows:</p>
 <p>Consider some training corpus $\mathcal{D}$ (e.g., a text corpus scraped from the internet), some machine learning algorithm $\mathcal{A}$ (e.g., training a transformer with a specific set of hyperparameters) that maps a given dataset $S \subset \mathcal{D}$ to a trained model $\theta$, and some evaluation of interest $\ell$ that maps $\theta$ to a real value (e.g., eval on a benchmark).</p>
 <p>The general goal of data valuation (or attribution) is to efficiently estimate $\ell(\mathcal{A}(S)) =: f(S)$ given $S$.
-That is, we want to predict the model outputs as function of the training data alone <a href="https://arxiv.org/abs/2202.00622" target="_blank" rel="noopener" class="hovercite" data-cite="Ilyas, Park, Engstrom, Leclerc, and Madry (2022). Datamodels: Predicting Predictions from Training Data.">[IPE&#43;22]</a>.
+That is, we want to predict the model outputs as a function of the training data alone <a href="https://arxiv.org/abs/2202.00622" target="_blank" rel="noopener" class="hovercite" data-cite="Ilyas, Park, Engstrom, Leclerc, and Madry (2022). Datamodels: Predicting Predictions from Training Data.">[IPE&#43;22]</a>.
 Often, we (locally) approximate $f$ as a <em>linear</em> function and are interested in estimating the <em>marginal or leave-one-out</em> data value of a datapoint $i \in S$:</p>
 <p>$$\nu_i := \mathbb{E}_\omega [f(S, \omega) - f(S \setminus \{i\}, \omega)],$$
 where the expectation is over randomness $\omega$ of the training algorithm (e.g., weight initialization, data order, and GPU non-determinism).</p>
 <p>In essence, this is a <em>counterfactual estimation</em> problem, and it is challenging as running an algorithm $\mathcal{A}$ in modern deep learning is extremely (computationally) expensive. How do we efficiently approximate such counterfactuals without re-training the model from scratch?</p>
-<p>Note: while understanding the role of randomness is an important issue, we ignore it for the remainder of this post to focus on the fixed-seed setting, dropping the seed term $\omega$ as it will stay fixed.
+<p>Note: while understanding the role of randomness is an important issue, we ignore it for the remainder of this post to focus on the fixed-seed setting, dropping the seed term $\omega$ as it remains fixed.
 In practice, this is achieved by using the same initialization, which naturally subsumes cases like continued pre-training or fine-tuning (which begins from some fixed checkpoint), provided the data order remains fixed.</p>
 
 <h2 class="relative group">Background: a tale of two algorithms
@@ -840,7 +845,7 @@ $$</p>
 <p>The key insight is that typically in modern deep learning, the entire sequence of operations taken by $\mathcal{A}$ is&mdash;however complex&mdash;some differentiable function of the data weights $w$, so one can “just differentiate” through the entire learning algorithm using standard autograd libraries.
 Computing this derivative can be extremely expensive if one&rsquo;s not careful, but the object is nonetheless faithful to the actual optimization trajectory.</p>
 <p>These methods have a long history in meta learning, hyperparameter optimization, and even fields like PDEs (where it is better known as the &ldquo;adjoint&rdquo; method; e.g., to analyze the sensitivity of a PDE to initial conditions).
-More recently, the metagradient method <a href="https://arxiv.org/abs/2503.13751" target="_blank" rel="noopener" class="hovercite" data-cite="Engstrom, Ilyas, Chen, Feldmann, Moses, and Madry (2025). Optimizing ML Training with Metagradient Descent.">[EIC&#43;25]</a> takes this approach and demonstrated its effectiveness across various large scale models and even settings beyond data attribution.</p>
+More recently, the metagradient method <a href="https://arxiv.org/abs/2503.13751" target="_blank" rel="noopener" class="hovercite" data-cite="Engstrom, Ilyas, Chen, Feldmann, Moses, and Madry (2025). Optimizing ML Training with Metagradient Descent.">[EIC&#43;25]</a> takes this approach and&mdash;with some clever insights and implementation&mdash;demonstrates its effectiveness across various large scale models and even settings beyond data attribution.</p>
 <p>In the rest of this post, we will apply the metagradient approach to language model training to tackle the problem of approximating marginal data values.</p>
 
 <h2 class="relative group">Smoothness: when are metagradients well defined?
@@ -854,11 +859,11 @@ More recently, the metagradient method <a href="https://arxiv.org/abs/2503.13751
 </h2>
 <p>If we can differentiate through everything, isn&rsquo;t the influence estimation problem solved? Not quite&mdash;the metagradient is an extremely ill-behaved object in general.
 In fact, for standard settings, if you compute it, you will just get NaNs due to gradients blowing up.</p>
-<p>One intuitive way to see why this is the case is as follows: suppose during training you are at a saddle point, and there are two potential &ldquo;basins&rdquo; A and B the trajectory can converge to. An infinitesimally small perturbation can determine whether the optimization descends into A or B&mdash;basins that are a finite distance apart in parameter space. The derivative is thus effectively infinite.<sup class="hovernote" tabindex="0" data-note="Technically, this is due to the way that metagradient is typically decomposed as an inner product of i) the parameter gradient w.r.t. data weights with ii) the output gradient w.r.t. parameters; while the former is infinite, it is possible that there is some way to &#34;bypass&#34; this.">2</sup>
- So if you imagine that earlier in training, the optimization is exploring many potential &ldquo;basins&rdquo;, it&rsquo;s no surprise that metagradient is infinite w.r.t. to that trajectory (and many alternative ones).</p>
+<p>One intuitive way to see why this is the case is as follows: suppose during training the current iterate is at a saddle point, and there are two potential &ldquo;basins&rdquo; A and B the trajectory can converge to. An infinitesimally small perturbation can determine whether the optimization descends into A or B&mdash;basins that are a finite distance apart in parameter space. The derivative is thus effectively infinite.<sup class="hovernote" tabindex="0" data-note="Technically, this is due to the way that metagradient is typically decomposed as an inner product of i) the parameter gradient w.r.t. data weights with ii) the output gradient w.r.t. parameters; while the former is infinite, it is possible that there is some way to &#34;bypass&#34; this.">2</sup>
+ So if you imagine that earlier in training, the optimization is exploring many potential &ldquo;basins&rdquo;, it&rsquo;s no surprise that metagradient is infinite w.r.t. that trajectory (and many alternative ones).</p>
 <figure class="block mx-auto">
   <img src="saddle_point.png" alt="Optimization near a saddle point." style="display: block; width: 60%; height: auto; margin-left: auto; margin-right: auto;">
-  <figcaption><strong>Optimization near a saddle point</strong>. The initial gradient descent trajectory (green) can take us down either side of the red curve.  </figcaption>
+  <figcaption><strong>Figure 2. Optimization near a saddle point</strong>. The initial gradient descent trajectory (green) can take us down either side of the red curve. Image source: <a href="https://davidlibland.github.io/posts/2018-11-10-saddle-points-and-sdg.html">link</a>  </figcaption>
 </figure>
 <p>Indeed, one can see that a <em>single</em> data perturbation early in training can cause the trajectory of weights to completely diverge. In the experiment below, we examine the sensitivity of pre-training a GPT-2 model with a fixed data order. Across different runs, we introduce a perturbation by zeroing out the gradient of a single example in a batch at different points in time, tracking the evolution of the cosine similarity of one of the weight matrices throughout training.
 Notably, any perturbation before halfway into training causes significant divergence in weight space (&lt; 0.7 cosine similarity).
@@ -866,11 +871,11 @@ Notably, any perturbation before halfway into training causes significant diverg
 </p>
 <figure class="block mx-auto">
   <img src="data_sensitivity.png" alt="Metagradient sensitivity in training dynamics." style="display: block; width: 70%; height: auto; margin-left: auto; margin-right: auto;">
-  <figcaption><strong>Sensitivity of training dynamics to data perturbations.</strong> x-axis indicates the training iteration; the y-axis indicates cosine similarity of one of the transformer weights between unperturbed and perturbed runs; the label indicates the time (as fraction of full training) at which a perturbation is first introduced.</figcaption>
+  <figcaption><strong>Figure 3. Sensitivity of training dynamics to data perturbations.</strong> x-axis indicates the training iteration; the y-axis indicates cosine similarity of one of the transformer weights between unperturbed and perturbed runs; the label indicates the time (as fraction of full training) at which a perturbation is first introduced.</figcaption>
 </figure>
 <p>So when do we expect metagradients to be useful?
-Intuitively, we want the local landscape to look approximately linear in the data perturbations.
-Engstrom et al. characterize this intuition more rigorously using a metric called <strong>metasmoothness</strong>.
+Intuitively, we want the local landscape to look <em>approximately linear</em> in the data perturbations.
+<a href="https://arxiv.org/abs/2503.13751" target="_blank" rel="noopener" class="hovercite" data-cite="Engstrom, Ilyas, Chen, Feldmann, Moses, and Madry (2025). Optimizing ML Training with Metagradient Descent.">[EIC&#43;25]</a> characterize this intuition more rigorously using a metric called <strong>metasmoothness</strong>.
 While the metasmoothness is very low for standard training hyperparameters and architectures, the authors find that
 in many standard settings you can tweak hyperparameters a little bit to find configurations that have much higher smoothness.
 (However, this gain typically comes at a small cost in loss, and it is an open question to understand the exact tradeoffs between smoothness and loss.)</p>
@@ -887,9 +892,10 @@ in many standard settings you can tweak hyperparameters a little bit to find con
 <p>We focus on pre-training as it is arguably the most interesting setting to study this algorithm:</p>
 <ul>
 <li>Because modern pre-training operates in a heavily undertrained regime (~one epoch over the data), it clearly departs from the assumptions of the implicit differentiation approach (which assumes a well-converged local minimum) and demands using the precision of an explicit approach.</li>
-<li>Pre-training takes much longer than fine-tuning and is a good testbed to test the limits of metagradients over extremely long horizons, and have not been studied in prior work.</li>
+<li>Pre-training takes much longer than fine-tuning and is a good testbed to test the limits of metagradients over extremely long horizons, and has not been studied in prior work.</li>
 <li>Pre-training consumes by far the most amount of raw data; hence, understanding the value of data is particularly important for i) optimizing pre-training data mix, but also ii) giving us a tool to precisely quantify the value of data (e.g., for data pricing, as we motivated in the introduction).</li>
 </ul>
+<p>Now that we&rsquo;ve laid the conceptual groundwork, we can now look at applying metagradients to LLM (pre)training.</p>
 
 <h2 class="relative group">Results
     <div id="results" class="anchor"></div>
@@ -912,18 +918,20 @@ in many standard settings you can tweak hyperparameters a little bit to find con
     
 </h3>
 <p><strong>Setup.</strong> We train a 124M parameter transformer<sup class="hovernote" tabindex="0" data-note="Using standard parameters, e.g., 12 layers, hidden dim 768, etc.; we use context length of 128">4</sup>
-  on 1.6B tokens of text data sampled from RedPajamaV2 <a href="https://arxiv.org/abs/2411.12372" target="_blank" rel="noopener" class="hovercite" data-cite="Weber et al. (2024). RedPajama: an Open Dataset for Training Large Language Models.">[W&#43;24]</a>. Since the training corpus consists of a vast number of domains, we isolate the top 20 domains by token count and estimate their data values. (The value of a data source such as a domain is naturally the sum of the values of its constituent documents.) As a target metric for data values, we use the LAMBADA task, a standard benchmark for long range understanding.</p>
-<p>We compute both an estimate of the <em>ground-truth</em> data value by re-training models on the corresponding counterfactual training sets (i.e., after removing the $i$-th data source) as well as our approximation to it based on the metagradient algorithm.</p>
+  on 1.6B tokens of text data sampled from RedPajamaV2 <a href="https://arxiv.org/abs/2411.12372" target="_blank" rel="noopener" class="hovercite" data-cite="Weber et al. (2024). RedPajama: an Open Dataset for Training Large Language Models.">[W&#43;24]</a>. Since the training corpus consists of a vast number of domains, we isolate the top 20 domains by token count and estimate their data values.<sup class="hovernote" tabindex="0" data-note="Technically, we obtain metagradient estimates for every document seen during training, which includes more than 20 domains, but we are bound by the number of counterfactual experiments we can run to estimate the ground-truth domain values.">5</sup>
+
+In particular, we approximate the value of a domain as the sum of the values of its constituent documents seen during training. As a target metric for data values, we use the LAMBADA task, a standard benchmark for long range understanding.</p>
+<p>We compute both an estimate of the <em>ground-truth</em> data value by re-training models on the corresponding counterfactual training sets (i.e., after removing the $i$-th data source) as well as our approximation to it based on the metagradient (computed using an implementation of REPLAY <a href="https://arxiv.org/abs/2503.13751" target="_blank" rel="noopener" class="hovercite" data-cite="Engstrom, Ilyas, Chen, Feldmann, Moses, and Madry (2025). Optimizing ML Training with Metagradient Descent.">[EIC&#43;25]</a>).</p>
 <p>$$
 \text{(ground-truth)}\;\; \nu_i = f(S) - f(S \setminus \{i\})
 $$
 $$
 \text{(metagradient approx.)}\;\; \nu_i \approx \frac{\partial f(w)}{\partial w_i}
 $$</p>
-<p>To keep our analysis in the metasmooth regime, we hold fixed the first 8% of training (using identical data and data ordering across all runs) and compute counterfactuals and metagradients only over the remaining 92%.<sup class="hovernote" tabindex="0" data-note="In particular, this means that we stop the metagradient computation, which starts from the end of training, once it reaches the 8% iteration.">5</sup>
+<p>To keep our analysis in the metasmooth regime, we hold fixed the first 8% of training (using identical data and data ordering across all runs) and compute counterfactuals and metagradients only over the remaining 92%.<sup class="hovernote" tabindex="0" data-note="In particular, this means that we stop the metagradient computation, which rewinds back from the end of training, once it reaches the iteration corresponding to 8% of training.">6</sup>
 </p>
-<p>(We hypothesize that marginal data differences only manifest past the initial phase of training, as early in training the learning dynamics focus more on, e.g., memorizing frequent n-grams <a href="https://arxiv.org/abs/2308.15419" target="_blank" rel="noopener" class="hovercite" data-cite="Chang, Tu, and Bergen (2023). Characterizing Learning Curves During Language Model Pre-Training: Learning, Forgetting, and Stability.">[CTB23]</a>, but this remains to be verified.)</p>
-<p><strong>Findings.</strong> As the domains vary substantially in their size, we analyze their <em>token normalized</em> data values (i.e., adjusted by their relative token count). We find that we can approximate ground-truth data values accurately (rank correlations of $r \approx 0.85$); see Figure 1. While re-training the model separately for each of hundreds or thousands of domains would be computationally infeasible, our approach allows one to estimate many such counterfactuals simultaneously using only $\sim$3x the compute of the original model training. In fact, while we aggregate and perform analysis at the level of individual domains, we obtain estimates for marginal data values at the <em>document level</em>.</p>
+<p>Remark: we hypothesize that marginal data differences only manifest past the initial phase of training, as early in training the learning dynamics focus more on, e.g., memorizing frequent n-grams <a href="https://arxiv.org/abs/2308.15419" target="_blank" rel="noopener" class="hovercite" data-cite="Chang, Tu, and Bergen (2023). Characterizing Learning Curves During Language Model Pre-Training: Learning, Forgetting, and Stability.">[CTB23]</a>, but this remains to be verified.</p>
+<p><strong>Findings.</strong> As the domains vary substantially in their size, we analyze their <em>token normalized</em> data values (i.e., adjusted by their relative token count). We find that we can approximate ground-truth data values accurately (rank correlations of $r \approx 0.85$); see Figure 4. While re-training the model separately for each of hundreds or thousands of domains would be computationally infeasible, using metagradietns allows one to estimate many such counterfactuals simultaneously using only $\sim$3x the compute of the original model training. In fact, while we aggregate and perform analysis at the level of individual domains, we obtain estimates for marginal data values at the <em>document level</em>, which would be completely infeasible using re-training!</p>
 
 <figure>
         <img
@@ -940,17 +948,17 @@ $$</p>
           data-zoom-src="/blog/posts/metagrads/lambada.png"
         />
   
-  <figcaption>Data values of different domains for pre-training GPT-2 (124M) on 1.6B tokens.</figcaption>
+  <figcaption><strong>Figure 4</strong>. Data values of different domains for pre-training GPT-2 (124M) on 1.6B tokens.</figcaption>
   </figure>
-<p>Among the top domains analyzed, <code>scribd</code>, <code>theatlantic</code>, and <code>goodreads</code> have the largest relative data values. In a separate analysis, we found that some less common domains such as <code>aparchive</code> (not shown in Figure) have remarkably higher normalized data values than these top domains, suggesting that future data curation may benefit from a more fine-grained analysis of each domain&rsquo;s contribution that goes beyond simple heuristics such as size or hand-crafted notions of data quality.</p>
+<p>Among the top domains analyzed, <code>scribd</code>, <code>theatlantic</code>, and <code>goodreads</code> have the largest relative data values. In a separate analysis, we found that some less common domains such as <code>aparchive</code> (not shown in Figure) have remarkably higher normalized data values than these top domains, suggesting that future data curation may benefit from a more fine-grained analysis of each domain&rsquo;s contribution that goes beyond simple heuristics such as size or human-engineered notions of data quality.</p>
 <p><strong>Smoothness interventions on hyperparameters and architecture</strong>.
-Building on the findings of Engstrom et al., we confirm that specific hyperparameter choices&mdash;such as smaller learning rates, placing $\epsilon$ inside the square root of the Adam update denominator, using lower LayerNorm $\epsilon$ values, and parameter initialization (e.g., no bias parameters and $\mu$P)&mdash;significantly improve metasmoothness.</p>
+Building on the findings of <a href="https://arxiv.org/abs/2503.13751" target="_blank" rel="noopener" class="hovercite" data-cite="Engstrom, Ilyas, Chen, Feldmann, Moses, and Madry (2025). Optimizing ML Training with Metagradient Descent.">[EIC&#43;25]</a>, we confirm that specific hyperparameter choices&mdash;such as using smaller learning rates, adding a small $\epsilon$ inside the square root of the Adam update denominator, using lower LayerNorm $\epsilon$ values, and tuning parameter initialization (e.g., no bias parameters and $\mu$P)&mdash;significantly improve metasmoothness.</p>
 <figure style="text-align:center;">
   <img src="smoothness_interventions.png" alt="Interventions that improve metasmoothness in practice." style="display:block;margin:0 auto;width:70%;" />
-  <figcaption style="margin:0 auto;max-width:70%;text-align:left;"><strong>Simple interventions can dramatically improve metasmoothness.</strong> Note that the metagradients are computed "backwards" from the end of training, and in general tracing back closer to the start of training causes metagradients to explode in magnitude. As found in Engstrom et al., simple interventions such as removing bias parameters or changing the parameter initialization can significantly delay the explosion of metagradients.</figcaption>
+  <figcaption style="text-align:left;"><strong>Figure 5. Simple interventions can dramatically improve metasmoothness.</strong> Note that the metagradients are computed "backwards" from the end of training, and in general tracing back closer to the start of training causes metagradients to explode in magnitude. As found in [EIC+25], simple interventions such as removing bias parameters or changing the parameter initialization can significantly delay the explosion of metagradients.</figcaption>
 </figure>
 <p>Furthermore, we find that modern, standard architectural components like RMSNorm and Rotary Position Embeddings (RoPE) also help improve metasmoothness.</p>
-<p><strong>Science of data valuation</strong>. Our investigations thus far confirm two challenges to (statistically) meaningful data valuation: First, training is a stochastic process, and the ground-truth estimates can vary significantly between different runs, making it challenging and computationally expensive to assess the validity of any single estimate. Second, even the true influence function (as computed by the metagradient) is often unstable, particularly near the beginning of training; intuitively, this is because early in training any small perturbation can still cause the training to diverge to very different final “basins” of the loss. One valuable direction for future work would be a general analysis and prescription of when and how reliable attribution can be achieved given these factors.</p>
+<p><strong>Science of data valuation</strong>. Our investigations thus far confirm two challenges to (statistically) meaningful data valuation: First, training is a stochastic process, and the ground-truth estimates can vary significantly between different runs, making it challenging and computationally expensive to assess the validity of any single estimate. Second, even the true influence function (as computed by the metagradient) is often unstable, particularly near the beginning of training; intuitively, as discussed earlier, this is because early in training any small perturbation can still cause the training to diverge to very different final “basins” of the loss. One valuable direction for future work would be a general analysis and prescription of when and how reliable attribution can be achieved given these factors.</p>
 
 <h3 class="relative group">Continued pre-training
     <div id="continued-pre-training" class="anchor"></div>
@@ -962,8 +970,8 @@ Building on the findings of Engstrom et al., we confirm that specific hyperparam
     
 </h3>
 <p>To complement the above results on pre-training and to replicate similar results from the original paper, we now investigate continued pre-training (which one could view as a fine-tuning regime).</p>
-<p><strong>Setup.</strong> We take a pre-trained 124M model (same architecture), this time already fine-tuned on 3.2B tokens of text data from FineWebEdu. Subsequently, we fine-tune this model on 20 uniformly weighted data sources from the Common Pile corpus. We then evaluate the fine-tuned model on Paloma-subreddits, a standard perplexity evaluation benchmark based on a collection of reddit posts; one may view this as a proxy for the model&rsquo;s ability to engage on conversations as they typically occur on these sites.</p>
-<p><strong>Findings.</strong> Similar to pre-training, we find that we can accurately estimate the true marginal data value of data sources using our approximations (Figure 2).</p>
+<p><strong>Setup.</strong> We take a pre-trained 124M model (same architecture), this time already fine-tuned on 3.2B tokens of text data from FineWebEdu. Subsequently, we fine-tune this model on 20 uniformly weighted data sources from the Common Pile corpus. We then evaluate the fine-tuned model on Paloma-subreddits, a standard perplexity evaluation benchmark based on a collection of reddit posts; one may view this as a proxy for the model&rsquo;s understanding of informal, user-generated web discourse.</p>
+<p><strong>Findings.</strong> Similar to pre-training, we find that metagradient-based approximations yield reasonable approximations to true marginal data value of data sources.</p>
 
 <figure>
         <img
@@ -980,7 +988,7 @@ Building on the findings of Engstrom et al., we confirm that specific hyperparam
           data-zoom-src="/blog/posts/metagrads/cpt.png"
         />
   
-  <figcaption>Data values of different domains for fine-tuning GPT-2 (124M) on 100M tokens from the Common Pile.</figcaption>
+  <figcaption><strong>Figure 6.</strong> Data values of different domains for fine-tuning GPT-2 (124M) on 100M tokens from the Common Pile.</figcaption>
   </figure>
 
 <h3 class="relative group">Approximations to metagradients
@@ -1011,10 +1019,10 @@ Unfortunately, the following analysis indicates that this is not the case:</p>
           data-zoom-src="/blog/posts/metagrads/tail_metagrads_v2.jpg"
         />
   
-  <figcaption><strong>Approximating metagradients via suffix of training trajectories</strong>. Our goal is to approximate the full counterfactual from iteration 1000 to 4000 by using partial sums of the corresponding metagradients.</figcaption>
+  <figcaption><strong>Figure 7. Approximating metagradients via suffix of training trajectories</strong>. Our goal is to approximate the full counterfactual from iteration 1000 to 4000 by using partial sums of the corresponding metagradients.</figcaption>
   </figure>
 <p>In this experiment, we took the partial sums of the metagradient scores (recall that we have this for every document / example) corresponding to different suffixes of training. Specifically, we approximate the marginal value of a data source by summing up the metagradient estimates for all the documents belonging to a particular suffix of the trajectory.
-We can observe that the predictability degrades quickly as the included trajectory gets shorter.</p>
+We can observe that the predictability degrades quickly as the included trajectory gets shorter. This result suggests that any naive attempt to &ldquo;cheat&rdquo; by observing only partial trajectory will likely fail.</p>
 
 <h2 class="relative group">Conclusion and future work
     <div id="conclusion-and-future-work" class="anchor"></div>
@@ -1030,7 +1038,7 @@ We can observe that the predictability degrades quickly as the included trajecto
 <ul>
 <li><strong>Stronger baselines and new algorithms.</strong> Better understanding the effectiveness (and failure modes) of baselines such as micro-annealing would be practically extremely valuable. Algorithmically, we are perhaps just getting started as it is only in the past few years that we first have scalable, predictive methods.
 <ul>
-<li>The two (and perhaps the only effective) algorithms are based on implicit and explicit differentiation. Is there a way to combine the benefits of both approaches to yield a stronger algorithm?  There is some nice initial work in this direction, e.g., <a href="https://arxiv.org/abs/2405.12186" target="_blank" rel="noopener" class="hovercite" data-cite="Bae, Lin, Lorraine, and Grosse (2024). Training Data Attribution via Approximate Unrolled Differentiation.">[BLL&#43;24]</a>.</li>
+<li>The two (and perhaps the only effective) algorithms are based on implicit and explicit differentiation. Is there a way to combine the benefits of both approaches to yield a stronger algorithm?  There is some really nice initial work in this direction, e.g., <a href="https://arxiv.org/abs/2405.12186" target="_blank" rel="noopener" class="hovercite" data-cite="Bae, Lin, Lorraine, and Grosse (2024). Training Data Attribution via Approximate Unrolled Differentiation.">[BLL&#43;24]</a>.</li>
 <li>Developing better algorithms will also require a deeper understanding of the nature of randomness and learning dynamics of neural networks and how they interact with marginal data values. (E.g., as we remarked before, earlier in training might be extremely unsmooth in terms of optimization dynamics but perhaps inconsequential for purposes of data valuation when marginalized over randomness.)</li>
 </ul>
 </li>
@@ -1038,11 +1046,11 @@ We can observe that the predictability degrades quickly as the included trajecto
 What are the right adjustments and functional forms needed to extrapolate accurately?
 <ul>
 <li>If it turns out there are accurate scaling laws, we might be able to do away with simpler (but more expensive) approaches like regression done at smaller scale (e.g., using tiny swarm-based models in Olmix <a href="https://arxiv.org/abs/2602.12237" target="_blank" rel="noopener" class="hovercite" data-cite="Chen, Murray, Heineman, Jordan, Hajishirzi, Ré, Soldaini, and Lo (2025). Olmix: A Framework for Data Mixing Throughout LM Development.">[CMH&#43;25]</a>) rather than using influence approximations (which can be done at larger scale but are more sensitive to hyperparameters).</li>
-<li>There is some nice initial work in this direction, e.g., <a href="https://arxiv.org/abs/2405.20456" target="_blank" rel="noopener" class="hovercite" data-cite="Covert, Ji, Hashimoto, and Zou (2024). Scaling Laws for the Value of Individual Data Points in Machine Learning.">[CJH&#43;24]</a> and <a href="https://arxiv.org/abs/2507.22250" target="_blank" rel="noopener" class="hovercite" data-cite="Ostapenko et al. (2025). Using Scaling Laws for Data Source Utility Estimation in Domain-Specific Pre-Training.">[OGK&#43;25]</a>, though the former only looks at the scaling along data scale (whereas we need to look at scaling in both model size and data) while latter is based on the premise that micro-annealing is a good approximation to the true counterfactuals.</li>
+<li>There is some nice initial work in this direction, e.g., <a href="https://arxiv.org/abs/2405.20456" target="_blank" rel="noopener" class="hovercite" data-cite="Covert, Ji, Hashimoto, and Zou (2024). Scaling Laws for the Value of Individual Data Points in Machine Learning.">[CJH&#43;24]</a> and <a href="https://arxiv.org/abs/2507.22250" target="_blank" rel="noopener" class="hovercite" data-cite="Ostapenko et al. (2025). Using Scaling Laws for Data Source Utility Estimation in Domain-Specific Pre-Training.">[OGK&#43;25]</a>, though the former only looks at the scaling along data scale (whereas we need to look at scaling in both model size and data) while the latter is based on the premise that micro-annealing is a good approximation to the true counterfactuals.</li>
 </ul>
 </li>
 <li><strong>Science of data quality</strong>. What approaches like metagradient make feasible for the first time is
-(efficiently) performing &ldquo;thousands of ablations at once&rdquo;. With this data now available (or easy to compute), further analysis can guide practitioners (e.g., those looking to acquire data to improve models), data creators (e.g., those looking to get compensated for their data), and policy makers (e.g., determining the significance of data sources in context of copyrights). Alternatively, the data from these hypothetical ablations may be used to train better cheap fast data quality estimators (e.g., fasttext classifiers as used in DCLM).</li>
+(efficiently) performing &ldquo;thousands of ablations at once&rdquo;. With this data now available (or easy to compute), further analysis can guide practitioners (e.g., those looking to acquire data to improve models), data creators (e.g., those looking to get compensated for their data), and policy makers (e.g., determining the significance of data sources in the context of copyrights). Alternatively, the data from these hypothetical ablations may be used to train better cheap fast data quality estimators (e.g., fasttext classifiers as used in DCLM).</li>
 <li><strong>Beyond linear estimators</strong>. Almost all work in this area is based on local linear approximations to data. An important open question is understanding&mdash;both theoretically and empirically&mdash;when non-linear effects manifest and how to predict them (e.g., when two data sources are individually helpful but together detrimental).
 <ul>
 <li>One common way to deal with the non-linearity is to iteratively compute metagradient and run gradient descent in &ldquo;data weight space&rdquo; <a href="https://arxiv.org/abs/2503.13751" target="_blank" rel="noopener" class="hovercite" data-cite="Engstrom, Ilyas, Chen, Feldmann, Moses, and Madry (2025). Optimizing ML Training with Metagradient Descent.">[EIC&#43;25]</a>. While simple and elegant, this approach is extremely expensive, and we suspect there are other ways to correct for the non-linearity.</li>
@@ -1075,8 +1083,8 @@ What are the right adjustments and functional forms needed to extrapolate accura
 the Stanford Marin team for the infra support (special thanks to David Hall, Ahmed Ahmed, and Suhas Kotha),
 Google TRC and Stanford NLP for compute,
 Andrew Ilyas and Logan Engstrom for an initial codebase for metagradients to jump start the project as well as various tips and discussions,
-Marcel Rod and Tatsu Hashimoto for a nice re-implementation of metagradients,
-Sally Zhu for some analyses and experiments on metagradients (not discussed here), and finally various members of p-lambda and the Hashimoto labs for useful discussions.</p>
+Marcel Rod and Tatsu Hashimoto for a clean re-implementation of metagradients,
+Sally Zhu for some analyses and experiments on metagradients (not discussed here), and finally various members of p-lambda, Hashimoto lab, and Zou lab for useful discussions.</p>
 
           
           
