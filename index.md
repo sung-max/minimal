@@ -38,6 +38,13 @@ through the *lens of data*:
 
 
 <div class="pub-item" data-selected="true" markdown="1">
+**Synthetic Data for any Differentiable Target**<br>
+Tristan Thrush, <u>Sung Min Park</u>, Herman Brunborg, Luke Bailey, Marcel Roed, Neil Band, Christopher Potts, Tatsunori Hashimoto<br>
+COLM 2026<br>
+[[<u>arxiv</u>]](https://arxiv.org/abs/2604.08423)
+</div>
+
+<div class="pub-item" data-selected="true" markdown="1">
 **Attribute-to-Delete: Machine Unlearning via Datamodel Matching**<br>
 Kristian Georgiev\*, Roy Rinberg\*, <u>Sung Min Park*</u>, Shivam Garg\*, Andrew Ilyas, Aleksander Mądry, Seth Neel <br>
 ICLR 2025<br>
@@ -151,6 +158,10 @@ setView(this.getAttribute('data-view'));
 
 <p>&nbsp;</p>
 ## Theses & Misc
+
+**Data valuation for LLMs via Metagradients**\
+Blog post, 2026\
+[[<u>link</u>]](/posts/datavalue/)
 
 **Machine Learning through the Lens of Data**\
 MIT, PhD thesis, 2024\
